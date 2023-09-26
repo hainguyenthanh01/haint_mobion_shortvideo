@@ -1,0 +1,439 @@
+.header {
+  height: 80px;
+  // background-color: #151822;
+
+  @media screen and (max-width: 1535px) {
+    // height: 60px;
+    gap: 60px;
+  }
+
+  display: flex;
+  // justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 14;
+  background-color: $primary_bg;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  &__left {
+    display: flex;
+    align-items: center;
+    min-width: 300px;
+  }
+
+  &__logo {
+    margin-top: 16px;
+  }
+
+  &__menuIcon {
+    margin-left: 40px;
+    margin-right: 40px;
+    cursor: pointer;
+  }
+
+  .searchBox {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 720px;
+    width: 100%;
+    @media screen and (max-width: 1535px) {
+      // width: 80%;
+      height: 46px;
+      // padding: 6px 18px;
+      // margin-left: 40px;
+      // margin-right: 40px;
+    }
+
+    @media screen and (max-width: 1279px) {
+      width: 500px;
+    }
+
+    @media screen and (max-width: 1023px) {
+      width: 400px;
+    }
+
+    background: $primary_bg;
+
+    display: flex;
+    position: relative;
+    height: 36px;
+    padding: 8px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 40px;
+  }
+
+  &__searchInput {
+    flex: 1;
+    outline: none;
+    background: transparent;
+    color: white;
+    height: 100%;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    // @include replace-font(500, 20px, 24px);
+    border: none;
+    padding-right: 78px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__searchIcon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    border-left: 1px solid rgba(255, 255, 255, 0.25);
+    padding-left: 20px;
+  }
+
+  .search-box {
+    position: absolute;
+    top: 67px;
+    left: 0;
+    background: $gray_bg;
+    padding: 12px 0;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    width: 100%;
+    z-index: 2;
+
+    &__text {
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+
+    &__item {
+      display: flex;
+      align-items: center;
+      padding: 8px 24px 8px 16px;
+      gap: 16px;
+      cursor: pointer;
+    }
+
+    &__delete {
+      margin-left: auto;
+      color: $blue_btn;
+      cursor: pointer;
+    }
+
+    &__trend-title {
+      margin: 16px;
+      color: #8f9094;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 20px 0px 20px 0;
+    position: relative;
+    // min-width: 300px;
+    margin: 20px 40px 20px 0;
+    @media screen and (max-width: 1535px) {
+      min-width: 300px;
+      // margin: 20px 20px 20px 0;
+    }
+    // align-items: ;
+    justify-content: end;
+    // background-color: red;
+
+    .profile-menu {
+      position: absolute;
+      top: 60px;
+      right: 0px;
+      background-color: #151822;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      z-index: 2;
+      min-width: 226px;
+
+      a {
+        color: white;
+      }
+
+      &__header {
+        padding: 16px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        column-gap: 8px;
+      }
+
+      &__username {
+        // @include replace-font(500, 16px, 22px);
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-break: break-word;
+      }
+
+      &__item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 16px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #1a1d2a;
+        }
+      }
+
+      &__text {
+        // @include replace-font(500, 16px, 22px);
+      }
+
+      &__avatar {
+        cursor: pointer;
+        width: 32px;
+        height: 32px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &__btnBuy {
+    padding: 8px 16px;
+  }
+
+  &__login {
+    padding: 8px 16px;
+    // margin-right: 40px;
+  }
+
+  &__bellIcon {
+    cursor: pointer;
+  }
+
+  &__line {
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.password-popup {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  &__info {
+    display: flex;
+  }
+
+  // &__title {
+  //   min-width: 200px;
+  //   @include replace-font(500, 16px, 22px);
+  // }
+
+  &__input {
+    padding: 9px 20px;
+    background-color: #1a1d2a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    width: 100%;
+    color: white;
+  }
+}
+.notification {
+  // position: absolute;
+  top: 60px;
+  right: 62px;
+  background-color: $gray_bg;
+  width: 465px;
+  height: 512px;
+  // width: 405px;
+  // height: 462px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  z-index: 2;
+  padding-bottom: 8px;
+  color: #fff;
+  @media screen and (max-width: 1919px) {
+    width: 405px;
+    height: 462px;
+  }
+  @media screen and (max-width: 1535px) {
+    width: 335px;
+    height: 400px;
+  }
+
+  @media screen and (max-width: 1279px) {
+    width: 325px;
+    height: 400px;
+  }
+
+  // @media screen and (max-width: 1023px) {
+  //   width: 300px;
+  //   height: 340px;
+  // }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #333333;
+    border-radius: 8px 8px 0px 0px;
+    padding: 8px 16px;
+    @media screen and (max-width: 1535px) {
+      padding: 6px 14px;
+    }
+  }
+
+  // &__title {
+  //   @include replace-font(700, 16px, 40px);
+  //   @media screen and (max-width: 1535px) {
+  //     @include replace-font(700, 14px, 24px);
+  //   }
+  // }
+
+  &__list {
+    overflow-y: auto;
+    height: calc(100% - 58px);
+
+    // @include scrollbar(rgba(255, 255, 255, 0.2), 6px);
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    padding: 16px 0px 16px 16px;
+    cursor: pointer;
+    position: relative;
+    @media screen and (max-width: 1535px) {
+      padding: 12px 0px 8px 2px;
+    }
+
+    // @media screen and (max-width: 1279px) {
+    //   width: 36px;
+    //   height: 36px;
+    // }
+
+    img:nth-child(1) {
+      border-radius: 50%;
+    }
+
+    &:hover {
+      background-color: #1a1d2a;
+    }
+  }
+
+  &__viewed {
+    border-radius: 100%;
+    background: $red_bg;
+    width: 8px;
+    height: 8px;
+    margin-top: 20px;
+  }
+
+  &__user-avatar {
+    margin-left: 12px;
+    margin-right: 12px;
+    object-fit: cover;
+    @media screen and (max-width: 1535px) {
+      width: 40px;
+      height: 40px;
+    }
+
+    @media screen and (max-width: 1279px) {
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  &__content {
+    flex: 1;
+    width: 100%;
+
+    h4 {
+      // @include replace-font(500, 16px, 22.4px);
+      margin-bottom: 4px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-break: break-word;
+      white-space: break-spaces;
+
+      // @media screen and (max-width: 1535px) {
+      //   @include replace-font(500, 14px, 19.6px);
+      //   margin-bottom: 2px;
+      // }
+
+      // @media screen and (max-width: 1279px) {
+      //   @include replace-font(500, 14px, 19.6px);
+      //   margin-bottom: 2px;
+      // }
+    }
+
+    p {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+      @media screen and (max-width: 1535px) {
+        font-size: 10px;
+      }
+    }
+  }
+
+  &__post {
+    width: 80px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    padding-left: 24px;
+    padding-right: 16px;
+    @media screen and (max-width: 1535px) {
+      width: 70px;
+    }
+  }
+
+  &__three-dot {
+    margin-left: auto;
+  }
+
+  &__btn-hide {
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+    display: none;
+    padding: 16px;
+    border-radius: 12px;
+    align-items: center;
+    border: 1px solid #ffffff1a;
+    background: linear-gradient(0deg, #1a1d2a, #1a1d2a),
+      linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+    color: #fff;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    // @media screen and (max-width: 1535px) {
+    //   // @include replace-font(500, 12px, 19.6px);
+    //   padding: 10px;
+    // }
+
+    img {
+      margin-right: 10px;
+    }
+    &.active {
+      display: flex;
+    }
+  }
+}
+.MuiMenu-paper {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
