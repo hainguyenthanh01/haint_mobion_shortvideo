@@ -8,6 +8,7 @@ import CommonLayout from "./layouts/CommonLayout"
 import VideoLayout from "./layouts/VideoLayout"
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
+import ShortVideo from "./components/ShortVideo";
 
 function App() {
   // const content = useRoutes(routes);
@@ -18,8 +19,8 @@ function App() {
         toastStyle={{ backgroundColor: "#1A1D2A", color: "white" }}
       /> */}
       {/* {content} */}
-      <Header/>
-      <Sidebar/>
+      <VideoLayout/>
+      
     </>
   );
 }

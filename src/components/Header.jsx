@@ -29,7 +29,7 @@ import { Button, Menu, MenuItem } from "@mui/material";
 // import { usePackage } from "../hooks/usePackage";
 // import { setReqPage } from "../utils/auth";
 
-function Header(props) {
+function Header(setShowMenu, showMenu) {
   const [showSearchBox, setShowSearchBox] = useToggle(false);
   // const location = useLocation();
   // const navigate = useNavigate();
