@@ -36,8 +36,6 @@
     row-gap: 8px;
     padding: 25px 6px 22px 6px;
     border-radius: 12px;
-    height: 35px;
-    cursor: pointer;
     &:hover {
       background-color: #1a1d2a;
     }
@@ -59,7 +57,7 @@
   }
 }
 .sidebar.show-sidebar {
-  width: 220px;
+  width: 240px;
   padding: 24px;
   // position: relative;
 
