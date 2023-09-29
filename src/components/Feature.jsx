@@ -90,7 +90,7 @@ function Feature({ featureData, allDataLove = [], setAllDataLove = () => {} }) {
           >
             {liked ? <img src={RedHeart} alt="" /> : <img src={Love} alt="" />}
           </button>
-          <p className="feature__number"></p>
+          <p className="feature__number">234</p>
         </div>
         <div className="feature__group">
           <button
@@ -105,7 +105,7 @@ function Feature({ featureData, allDataLove = [], setAllDataLove = () => {} }) {
           >
             <img src={Comment} alt="" />
           </button>
-          <p className="feature__number"></p>
+          <p className="feature__number">123</p>
         </div>
         <div className="feature__group">
           <button
