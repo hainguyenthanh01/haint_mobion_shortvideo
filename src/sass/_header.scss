@@ -292,12 +292,18 @@
     }
   }
 
-  // &__title {
-  //   @include replace-font(700, 16px, 40px);
-  //   @media screen and (max-width: 1535px) {
-  //     @include replace-font(700, 14px, 24px);
-  //   }
-  // }
+  &__title {
+    // @include replace-font(700, 16px, 40px);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 40px;
+    @media screen and (max-width: 1535px) {
+      // @include replace-font(700, 14px, 24px);
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
 
   &__list {
     overflow-y: auto;
@@ -359,6 +365,9 @@
 
     h4 {
       // @include replace-font(500, 16px, 22.4px);
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 22.4px;
       margin-bottom: 4px;
       display: -webkit-box;
       -webkit-line-clamp: 2;
@@ -368,15 +377,14 @@
       word-break: break-word;
       white-space: break-spaces;
 
-      // @media screen and (max-width: 1535px) {
-      //   @include replace-font(500, 14px, 19.6px);
-      //   margin-bottom: 2px;
-      // }
+      @media screen and (max-width: 1535px) {
+        // @include replace-font(500, 14px, 19.6px);
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 19.6px;
+        margin-bottom: 2px;
+      }
 
-      // @media screen and (max-width: 1279px) {
-      //   @include replace-font(500, 14px, 19.6px);
-      //   margin-bottom: 2px;
-      // }
     }
 
     p {
@@ -420,10 +428,13 @@
     font-size: 16px;
     font-weight: 500;
     line-height: 22px;
-    // @media screen and (max-width: 1535px) {
-    //   // @include replace-font(500, 12px, 19.6px);
-    //   padding: 10px;
-    // }
+    @media screen and (max-width: 1535px) {
+      // @include replace-font(500, 12px, 19.6px);
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 19.6px;
+      padding: 10px;
+    }
 
     img {
       margin-right: 10px;

@@ -24,7 +24,7 @@ import Kids from "../assets/icons/options/Kids.svg";
 import TinNhanh from "../assets/icons/options/TinNhanh.png";
 
 function Sidebar({showMenu}) {
-
+  const location = useLocation();
 const [showFollowVideo, setShowFollowVideo] = useState(false);
   const [listAllSidebar, setListAllSidebar] = useState({});
   const navigate = useNavigate()
@@ -35,6 +35,7 @@ const [showFollowVideo, setShowFollowVideo] = useState(false);
     {
       text: "Dành cho bạn",
       url: "/danh-cho-ban",
+      url2: "/",
       iconActive: HomeActive,
       icon: HomeNonActive,
       link:"/danh-cho-ban"
@@ -135,24 +136,36 @@ const [showFollowVideo, setShowFollowVideo] = useState(false);
     <div>
       <nav className={showMenu ? "sidebar show-sidebar" : "sidebar"}>
         <div className="menu">
-          {menuItems.map(({ text, icon, iconActive,link }) => (
+          {menuItems.map(({ text, url,url2, icon, iconActive ,link }, index) => (
             <div
               key={text}
-              className={
-                showMenu ? "menu__item menu__show" : "menu__item"
-              }
+              className={`${showMenu ? "menu__item menu__show" : "menu__item"} ${
+                location.pathname === "/" && url === "/danh-cho-ban" && "active"
+              }`}
+              // style={{
+              //   display: url === "/yeu-thich" ? "none" : "flex",
+              // }}
               onClick={()=>{
                 navigate(link)}}
             >          
-                <img
-                  className="menu__item-icon"
-                  src={icon}
-                  alt=""
-                  width={32}
-                  height={32}
-                />
-              
-
+                {location.pathname === url ||
+            (url2 && url2 === location.pathname) ? (
+              <img
+                className="menu__item-icon"
+                src={iconActive}
+                alt=""
+                width={32}
+                height={32}
+              />
+            ) : (
+              <img
+                className="menu__item-icon"
+                src={icon}
+                alt=""
+                width={32}
+                height={32}
+              />
+            )}
               <p className="menu__des">{text}</p>
             </div>
           ))}

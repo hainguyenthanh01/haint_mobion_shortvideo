@@ -68,7 +68,38 @@ function FollowVideo() {
       BGimg: "https://blog.wordsmine.com/wp-content/uploads/2023/06/Music-Club.jpeg",
       Avimg: "https://images.macrumors.com/t/vMbr05RQ60tz7V_zS5UEO9SbGR0=/1600x900/smart/article-new/2018/05/apple-music-note.jpg",
       name: "Music"
+    },
+    {
+      BGimg: "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/56/8d/70/568d7021-7b8c-6c0c-b4b1-e7b07683c98c/cover.jpg/1200x1200bb.jpg",
+      Avimg: "https://giadinh.mediacdn.vn/2019/10/23/phong11-1571818005585708233526.jpg",
+      name: "Châu Khải Phong Music"
+    },
+    {
+      BGimg: "https://yt3.googleusercontent.com/J50LpbvY9PRKAKIfPOBDOJpxQvnVcxb0Hapj2ybL7kvLdtluG744OpnIBrtorybHCL_d637AnA=s900-c-k-c0x00ffffff-no-rj",
+      Avimg: "https://static2.yan.vn/YanNews/2167221/201905/tieu-su-su-nghiep-va-cuoc-doi-ca-si-akira-phan-06205378.jpg",
+      name: "Akira Phan Music"
+    },
+    {
+      BGimg: "https://blog.wordsmine.com/wp-content/uploads/2023/06/Music-Club.jpeg",
+      Avimg: "https://images.macrumors.com/t/vMbr05RQ60tz7V_zS5UEO9SbGR0=/1600x900/smart/article-new/2018/05/apple-music-note.jpg",
+      name: "Music"
+    },
+    {
+      BGimg: "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/56/8d/70/568d7021-7b8c-6c0c-b4b1-e7b07683c98c/cover.jpg/1200x1200bb.jpg",
+      Avimg: "https://giadinh.mediacdn.vn/2019/10/23/phong11-1571818005585708233526.jpg",
+      name: "Châu Khải Phong Music"
+    },
+    {
+      BGimg: "https://yt3.googleusercontent.com/J50LpbvY9PRKAKIfPOBDOJpxQvnVcxb0Hapj2ybL7kvLdtluG744OpnIBrtorybHCL_d637AnA=s900-c-k-c0x00ffffff-no-rj",
+      Avimg: "https://static2.yan.vn/YanNews/2167221/201905/tieu-su-su-nghiep-va-cuoc-doi-ca-si-akira-phan-06205378.jpg",
+      name: "Akira Phan Music"
+    },
+    {
+      BGimg: "https://blog.wordsmine.com/wp-content/uploads/2023/06/Music-Club.jpeg",
+      Avimg: "https://images.macrumors.com/t/vMbr05RQ60tz7V_zS5UEO9SbGR0=/1600x900/smart/article-new/2018/05/apple-music-note.jpg",
+      name: "Music"
     }
+    
   ]
 
   return (
