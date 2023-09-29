@@ -55,13 +55,13 @@ function FollowVideo() {
   };
   const allData = [
     {
-      BGimg: "http://s3image.mobion.vn/image/uploads/2023/07/shortvideo3/short_video_3.jpeg?sqp=oaymwEZCNAFEJQDSFXyq4qpAwsIARUAAIhCGAFwAQ&rs=AOn4CLDNWhlEEj6DrJVa0XOgSqXzw-DE9Q",
-      Avimg: "http://s3image.mobion.vn/image/uploads/2022/01/01/1636081515970/9d3330bfe857.png?sqp=oaymwEZCNAFEJQDSFXyq4qpAwsIARUAAIhCGAFwAQ&rs=AOn4CLDNWhlEEj6DrJVa0XOgSqXzw-DE9Q",
+      BGimg: "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/56/8d/70/568d7021-7b8c-6c0c-b4b1-e7b07683c98c/cover.jpg/1200x1200bb.jpg",
+      Avimg: "https://giadinh.mediacdn.vn/2019/10/23/phong11-1571818005585708233526.jpg",
       name: "Châu Khải Phong Music"
     },
     {
       BGimg: "https://yt3.googleusercontent.com/J50LpbvY9PRKAKIfPOBDOJpxQvnVcxb0Hapj2ybL7kvLdtluG744OpnIBrtorybHCL_d637AnA=s900-c-k-c0x00ffffff-no-rj",
-      Avimg: "http://s3image.mobion.vn/image/uploads/2022/01/01/1636081592968/9b68d6674848.png?sqp=oaymwEZCNAFEJQDSFXyq4qpAwsIARUAAIhCGAFwAQ&rs=AOn4CLDNWhlEEj6DrJVa0XOgSqXzw-DE9Q",
+      Avimg: "https://static2.yan.vn/YanNews/2167221/201905/tieu-su-su-nghiep-va-cuoc-doi-ca-si-akira-phan-06205378.jpg",
       name: "Akira Phan Music"
     },
     {
