@@ -1,0 +1,75 @@
+.follow-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px 30px;
+  margin: 0 80px  20px 80px;
+
+  // @media screen and (max-width: 1535px) {
+  //   grid-template-columns: repeat(4, 1fr);
+  // }
+
+  @media screen and (max-width: 1279px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media screen and (max-width: 1023px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  &__card {
+    // height: calc(calc(100vh - 180px) / 2);
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    &__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+    position: relative;
+  }
+
+  &__detail {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 12px;
+
+    &__img {
+      object-fit: cover;
+      border-radius: 100%;
+      cursor: pointer;
+    }
+    &__name {
+      @include replace-font(600, 14px, 20px);
+      cursor: pointer;
+    }
+    &__btn {
+      display: flex;
+      align-items: center;
+      padding: 4px 20px;
+      border-radius: 10px;
+      gap: 9px;
+      border: none;
+      background-color: rgb(210, 31, 60);
+      color: white;
+      @include replace-font(600, 14px, 20px);
+    }
+  }
+
+  .vjs-play-control {
+    display: none;
+  }
+  .video-js .vjs-tech {
+    border-radius: 12px;
+  }
+  .vjs-big-play-button {
+    display: none !important;
+  }
+  .video-js .vjs-control-bar {
+    display: none;
+  }
+}

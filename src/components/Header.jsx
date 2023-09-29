@@ -29,7 +29,8 @@ import { Button, Menu, MenuItem } from "@mui/material";
 // import { usePackage } from "../hooks/usePackage";
 // import { setReqPage } from "../utils/auth";
 
-function Header(setShowMenu, showMenu) {
+function Header({setShowMenu = () => {}, showMenu}) {
+  
   const [showSearchBox, setShowSearchBox] = useToggle(false);
   // const location = useLocation();
   // const navigate = useNavigate();
@@ -45,10 +46,10 @@ function Header(setShowMenu, showMenu) {
           src={menuHeader}
           alt="menu icon"
           className="header__menuIcon"
-          //   onClick={() => {
-          //     setShowMenu();
-          //     localStorage.setItem("open__menu", showMenu ? "0" : "1");
-          //   }}
+            onClick={() => {
+              setShowMenu();
+              localStorage.setItem("open__menu", showMenu ? "0" : "1");
+            }}
         />
         {/* <Link> */}
         <img

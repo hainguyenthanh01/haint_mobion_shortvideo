@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, NavLink, Navigate, useLocation } from "react-router-dom";
+import { Link, NavLink, Navigate, useLocation, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import HomeActive from "../assets/icons/HomeActive.svg";
 import HomeNonActive from "../assets/icons/HomeNonActive.svg";
@@ -23,9 +23,11 @@ import ESport from "../assets/icons/options/Esport.svg";
 import Kids from "../assets/icons/options/Kids.svg";
 import TinNhanh from "../assets/icons/options/TinNhanh.png";
 
-function Sidebar(props, showMenu) {
-//   const location = useLocation();
+function Sidebar({showMenu}) {
+
+const [showFollowVideo, setShowFollowVideo] = useState(false);
   const [listAllSidebar, setListAllSidebar] = useState({});
+  const navigate = useNavigate()
 
   const [showAllSuggest, setShowAllSuggest] = useToggle(false);
   const [showAllFollow, setShowAllFollow] = useToggle(false);
@@ -35,24 +37,28 @@ function Sidebar(props, showMenu) {
       url: "/danh-cho-ban",
       iconActive: HomeActive,
       icon: HomeNonActive,
+      link:"/danh-cho-ban/123"
     },
     {
       text: "Đang theo dõi",
       url: "/dang-theo-doi",
       iconActive: PersonActive,
       icon: PersonNon,
+      link:"/dang-theo-doi"
     },
     {
       text: "Trực tiếp",
       url: "/live",
       iconActive: icon_Live,
       icon: icon_Live,
+      link:"/live"
     },
     {
       text: "Yêu thích",
       url: "/yeu-thich",
       iconActive: Love,
       icon: LoveNon,
+      link:"/yeu-thich"
     },
   ];
   const menuChannel = [
@@ -129,12 +135,14 @@ function Sidebar(props, showMenu) {
     <div>
       <nav className={showMenu ? "sidebar show-sidebar" : "sidebar"}>
         <div className="menu">
-          {menuItems.map(({ text, icon, iconActive }) => (
+          {menuItems.map(({ text, icon, iconActive,link }) => (
             <div
               key={text}
               className={
                 showMenu ? "menu__item menu__show" : "menu__item"
               }
+              onClick={()=>{
+                navigate(link)}}
             >          
                 <img
                   className="menu__item-icon"
@@ -150,6 +158,7 @@ function Sidebar(props, showMenu) {
           ))}
           <div className="sidebar__line"></div>
         </div>
+        {showMenu &&(
         <div className="login">
           <p className="login__des">
             Hãy đăng nhập để thích video, bình luận và đăng ký kênh.
@@ -159,7 +168,8 @@ function Sidebar(props, showMenu) {
             Đăng nhập
           </button>
           <div className="sidebar__line"></div>
-        </div>
+        </div>)}
+        {showMenu &&(
         <div className="channels-pri">
           <h3 className="channels-pri__title">
             Kênh đề xuất
@@ -191,7 +201,8 @@ function Sidebar(props, showMenu) {
                 <p className="channels-pri__view">Xem thêm</p>
               </a>
           <div className="sidebar__line"></div>
-        </div>
+        </div>)}
+        {showMenu &&(
         <div className="discovery">
           <h3 className="discovery__title">
             Khám phá
@@ -205,7 +216,8 @@ function Sidebar(props, showMenu) {
           </ul>
 
           <div className="sidebar__line"></div>
-        </div>
+        </div>)}
+        {showMenu &&(
         <div className="service">
           <h3 className="service__title">
             Dịch vụ khác của Mobion
@@ -225,6 +237,8 @@ function Sidebar(props, showMenu) {
           </ul>
           <div className="sidebar__line"></div>
         </div>
+        )}
+        {showMenu &&(
         <div className="info">
           <p className="info__title">Bản quyền thuộc</p>
           <img src={Mobifone} className="info__img" alt="" />
@@ -289,6 +303,7 @@ function Sidebar(props, showMenu) {
             />
           </div>
         </div>
+        )}
       </nav>
     </div>
   );

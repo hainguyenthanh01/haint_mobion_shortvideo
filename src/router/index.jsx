@@ -18,6 +18,10 @@
 // import { Navigate, useLocation } from "react-router-dom";
 // import { setReqPage } from "../utils/auth";
 
+import FollowVideo from "../components/FollowVideo";
+import ShortVideo from "../components/ShortVideo";
+import VideoLayout from "../layouts/VideoLayout";
+
 // const RequireAuth = ({ children }) => {
 //   const user = getUser();
 //   const location = useLocation();
@@ -80,33 +84,34 @@
 //     },
 //   ],
 // };
-// const videoRoute = {
-//   path: "*",
-//   element: <VideoLayout />,
-//   children: [
-//     {
-//       index: true,
-//       element: <ShortVideo />,
-//     },
-//     {
-//       path: "danh-cho-ban",
-//       element: <ShortVideo />,
-//     },
+const videoRoute = {
+  path: "*",
+  element: <VideoLayout />,
+  children: [
+    {
+      index: true,
+      element: <ShortVideo />,
+    },
+    {
+      path: "danh-cho-ban/:id",
+      element: <ShortVideo />,
+    },
+    
 
-//     {
-//       path: "live",
-//       element: <LiveStream />,
-//     },
-//     {
-//       path: "yeu-thich",
-//       element: (
-//         <RequireAuth>
-//           <LoveVideo />
-//         </RequireAuth>
-//       ),
-//     },
-//   ],
-// };
+    // {
+    //   path: "live",
+    //   element: <LiveStream />,
+    // },
+    // {
+    //   path: "yeu-thich",
+    //   element: (
+    //     <RequireAuth>
+    //       <LoveVideo />
+    //     </RequireAuth>
+    //   ),
+    // },
+  ],
+};
 // const loginRoute = {
 //   path: "*",
 //   element: null,
@@ -126,5 +131,6 @@
 // };
 
 // const routes = [normalRoutes, videoRoute, loginRoute];
+const routes = [ videoRoute];
 
-// export default routes;
+export default routes;
