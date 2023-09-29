@@ -44,7 +44,10 @@
       cursor: pointer;
     }
     &__name {
-      @include replace-font(600, 14px, 20px);
+      // @include replace-font(600, 14px, 20px);
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 20px;
       cursor: pointer;
     }
     &__btn {
@@ -56,7 +59,10 @@
       border: none;
       background-color: rgb(210, 31, 60);
       color: white;
-      @include replace-font(600, 14px, 20px);
+      // @include replace-font(600, 14px, 20px);
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 20px;
     }
   }
 

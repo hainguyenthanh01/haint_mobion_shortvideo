@@ -27,7 +27,7 @@ const VideoLayout = () => {
           className="main__page"
           style={{ marginLeft: showMenu ? "271px" : "120px" }}
         >
-          <ShortVideo/>
+          {/* <ShortVideo/> */}
           <Outlet />
         </div>
       </div>

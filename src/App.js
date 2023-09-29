@@ -12,6 +12,7 @@ import ShortVideo from "./components/ShortVideo";
 
 function App() {
   const content = useRoutes(routes);
+  console.log(content);
 
   return (
     <>

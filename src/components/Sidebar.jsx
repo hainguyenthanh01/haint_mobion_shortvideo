@@ -37,7 +37,7 @@ const [showFollowVideo, setShowFollowVideo] = useState(false);
       url: "/danh-cho-ban",
       iconActive: HomeActive,
       icon: HomeNonActive,
-      link:"/danh-cho-ban/123"
+      link:"/danh-cho-ban"
     },
     {
       text: "Đang theo dõi",

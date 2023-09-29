@@ -9,7 +9,6 @@ const CommonLayout = () => {
   const [showMenu, setShowMenu] = useToggle(true);
   useEffect(() => {
     if (localStorage.getItem("open__menu")) {
-      console.log("run");
       setShowMenu(localStorage.getItem("open__menu") === "1" ? true : false);
     } else {
       localStorage.setItem("open__menu", "1");

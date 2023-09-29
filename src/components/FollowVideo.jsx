@@ -55,6 +55,19 @@ function FollowVideo() {
   };
   const allData = [
     {
+      BGimg: "http://s3image.mobion.vn/image/uploads/2023/07/shortvideo3/short_video_3.jpeg?sqp=oaymwEZCNAFEJQDSFXyq4qpAwsIARUAAIhCGAFwAQ&rs=AOn4CLDNWhlEEj6DrJVa0XOgSqXzw-DE9Q",
+      Avimg: "http://s3image.mobion.vn/image/uploads/2022/01/01/1636081515970/9d3330bfe857.png?sqp=oaymwEZCNAFEJQDSFXyq4qpAwsIARUAAIhCGAFwAQ&rs=AOn4CLDNWhlEEj6DrJVa0XOgSqXzw-DE9Q",
+      name: "Châu Khải Phong Music"
+    },
+    {
+      BGimg: "https://yt3.googleusercontent.com/J50LpbvY9PRKAKIfPOBDOJpxQvnVcxb0Hapj2ybL7kvLdtluG744OpnIBrtorybHCL_d637AnA=s900-c-k-c0x00ffffff-no-rj",
+      Avimg: "http://s3image.mobion.vn/image/uploads/2022/01/01/1636081592968/9b68d6674848.png?sqp=oaymwEZCNAFEJQDSFXyq4qpAwsIARUAAIhCGAFwAQ&rs=AOn4CLDNWhlEEj6DrJVa0XOgSqXzw-DE9Q",
+      name: "Akira Phan Music"
+    },
+    {
+      BGimg: "https://blog.wordsmine.com/wp-content/uploads/2023/06/Music-Club.jpeg",
+      Avimg: "https://images.macrumors.com/t/vMbr05RQ60tz7V_zS5UEO9SbGR0=/1600x900/smart/article-new/2018/05/apple-music-note.jpg",
+      name: "Music"
     }
   ]
 
@@ -67,7 +80,7 @@ function FollowVideo() {
               <div
                 className="follow-list__card"
                 style={{
-                  background: item.videoData?.converImage ? "unset" : "#2985d9",
+                  // background: item.videoData?.converImage ? "unset" : "#2985d9",
                   borderRadius: "20px",
                 }}
                 // key={item.videoData.channel_id}
@@ -91,7 +104,7 @@ function FollowVideo() {
                 )}
                 {/* {!item.isPreviewVideo && item.videoData?.converImage && ( */}
                   <img
-                    src={item.videoData.converImage}
+                    src={item.BGimg}
                     alt=""
                     className="follow-list__card__img"
                   />
@@ -101,7 +114,7 @@ function FollowVideo() {
                   <div className="follow-list__detail">
                     {/* <Link to={`/channel/${item.videoData.channel_slug}`}> */}
                       <img
-                        src={item.videoData.avatarImage}
+                        src={item.Avimg}
                         alt=""
                         width={48}
                         height={48}
@@ -114,7 +127,7 @@ function FollowVideo() {
                       style={{ color: "white" }}
                       className="follow-list__detail__name"
                     >
-                      {item.videoData.channel_name}
+                      {item.name}
                     </div>
                     {item.isFollow ? (
                       <button

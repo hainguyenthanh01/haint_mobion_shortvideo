@@ -88,14 +88,19 @@ const videoRoute = {
   path: "*",
   element: <VideoLayout />,
   children: [
+    // {
+    //   index: true,
+    //   element: <ShortVideo />,
+    // },
     {
-      index: true,
+      path: "danh-cho-ban",
       element: <ShortVideo />,
     },
     {
-      path: "danh-cho-ban/:id",
-      element: <ShortVideo />,
-    },
+        path: "dang-theo-doi",
+        element: <FollowVideo />,
+      },
+
     
 
     // {
