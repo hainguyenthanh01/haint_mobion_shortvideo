@@ -19,6 +19,7 @@
 // import { setReqPage } from "../utils/auth";
 
 import FollowVideo from "../components/FollowVideo";
+import HashTag from "../components/HashTag";
 import ShortVideo from "../components/ShortVideo";
 import VideoLayout from "../layouts/VideoLayout";
 
@@ -99,8 +100,11 @@ const videoRoute = {
     {
         path: "dang-theo-doi",
         element: <FollowVideo />,
-      },
-
+    },
+    {
+      path: "hashtag",
+      element: <HashTag />,
+  },
     
 
     // {

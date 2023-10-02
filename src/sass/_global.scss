@@ -70,6 +70,7 @@ body {
 }
 .main {
   display: flex;
+  overflow-y: auto;
   &__page {
     width: 100%;
     flex: 1;

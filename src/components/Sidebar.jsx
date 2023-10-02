@@ -82,21 +82,27 @@ const [showFollowVideo, setShowFollowVideo] = useState(false);
   const discovery = [
     {
       text: "lebao",
+      link: "/hashtag"
     },
     {
       text: "trending",
+      link: "/hashtag"
     },
     {
       text: "hot",
+      link: "/hashtag"
     },
     {
       text: "food",
+      link: "/hashtag"
     },
     {
       text: "foryou",
+      link: "/hashtag"
     },
     {
       text: "xuhuong",
+      link: "/hashtag"
     },
   ];
   const service = [
@@ -221,9 +227,10 @@ const [showFollowVideo, setShowFollowVideo] = useState(false);
             Khám phá
           </h3>
           <ul className="discovery__tags">
-            {discovery.map((item) => (
+            {discovery.map(({ text, link }) => (
               <li className="discovery__tag">
-                <div>#{item.text}</div>
+                <div onClick={()=>{
+                navigate(link)}}>#{text}</div>
               </li>
             ))}
           </ul>
