@@ -22,7 +22,7 @@ import PFpassword from "../assets/img/profile-menu/password.svg";
 import PFlogout from "../assets/img/profile-menu/logout.svg";
 // import { useSearch } from "../hooks/useSearch";
 // import useDebounce from "../utils/hooks/useDebounce";
-// import Notification from "./Notification";
+import Notification from "./Notification";
 // import PackageDialog from "../Dialogs/PackageDialog";
 // import LogoutRequiredDialog from "../Dialogs/LogoutRequiredDialog";
 import { Button, Menu, MenuItem } from "@mui/material";
@@ -31,6 +31,7 @@ import { Button, Menu, MenuItem } from "@mui/material";
 
 function Header({ setShowMenu = () => {}, showMenu }) {
   const [showSearchBox, setShowSearchBox] = useToggle(false);
+  const [showNotification, setShowNotification] = useState(null);
   // const location = useLocation();
   // const navigate = useNavigate();
   // const notificationRef = useRef(null);
@@ -122,6 +123,36 @@ function Header({ setShowMenu = () => {}, showMenu }) {
         >
           Mua gói
         </button>
+        <Button
+            id="basic-button"
+            aria-controls={showNotification ? "basic-menu" : undefined}
+            aria-haspopup="true"
+            aria-expanded={showNotification ? "true" : undefined}
+            onClick={(event) => setShowNotification(event.currentTarget)}
+            sx={{ minWidth: "auto", padding: 0 }}
+          >
+            <img src={bell} alt="bell" className="header__bellIcon" />
+          </Button>
+          <Menu
+          id="basic-menu"
+          anchorEl={showNotification}
+          open={showNotification}
+          onClose={() => setShowNotification(null)}
+          MenuListProps={{
+            "aria-labelledby": "basic-button",
+          }}
+        >
+          <MenuItem>
+            <div  className="notification">
+              {showNotification && (
+                <Notification
+                  showNotification={showNotification}
+                  setShowNotification={setShowNotification}
+                />
+              )}
+            </div>
+          </MenuItem>
+        </Menu>
         <button
           // onClick={() => navigate("/login")}
           className="header__login btn btn--blue"
