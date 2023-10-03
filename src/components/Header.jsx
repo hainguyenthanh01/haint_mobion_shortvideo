@@ -23,13 +23,14 @@ import PFlogout from "../assets/img/profile-menu/logout.svg";
 // import { useSearch } from "../hooks/useSearch";
 // import useDebounce from "../utils/hooks/useDebounce";
 import Notification from "./Notification";
-// import PackageDialog from "../Dialogs/PackageDialog";
+import PackageDialog from "../Dialogs/PackageDialog";
 // import LogoutRequiredDialog from "../Dialogs/LogoutRequiredDialog";
 import { Button, Menu, MenuItem } from "@mui/material";
 // import { usePackage } from "../hooks/usePackage";
 // import { setReqPage } from "../utils/auth";
 
 function Header({ setShowMenu = () => {}, showMenu }) {
+  const [showPackage, setShowPackage] = useToggle(false);
   const [showSearchBox, setShowSearchBox] = useToggle(false);
   const [showNotification, setShowNotification] = useState(null);
   // const location = useLocation();
@@ -117,7 +118,7 @@ function Header({ setShowMenu = () => {}, showMenu }) {
       </div>
       <div className="header__right">
         <button
-          // onClick={setShowPackage}
+          onClick={setShowPackage}
           className="header__btnBuy btn btn--red"
           style={{ borderRadius: "6px" }}
         >
@@ -166,6 +167,7 @@ function Header({ setShowMenu = () => {}, showMenu }) {
           Đăng Nhập
         </button>
       </div>
+      <PackageDialog open={showPackage} setOpen={setShowPackage} />
     </header>
   );
 }
