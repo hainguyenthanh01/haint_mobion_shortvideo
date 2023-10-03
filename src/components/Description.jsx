@@ -4,6 +4,11 @@ import ShowMoreText from "react-show-more-text";
 import Avatar from "../assets/img/Avatar.png";
 
 function Description({ item, followChannelHandler }) {
+
+  const data = [
+    { 
+    }
+  ]
   return (
     <div className="card__info">
       <div className="card__user">
@@ -15,18 +20,13 @@ function Description({ item, followChannelHandler }) {
           />
         {/* </Link> */}
         {/* <Link to={`/channel/${item.videoData.channelSlug}`}> */}
-          <div className="card__user-name">Châu Khải Phong</div>
+          <div className="card__user-name">Châu Khải Phong Music</div>
         {/* </Link> */}
 
         <button
           className={item.isFollow ? "btn btn--gray" : "btn btn--white"}
-          onClick={() =>
-            followChannelHandler(
-              item.videoData.channelId,
-              item.isFollow,
-              item.videoData.channelId
-            )
-          }
+          onClick={followChannelHandler}
+          
         >
           {item.isFollow ? "Đã theo dõi" : "Theo dõi"}
         </button>
@@ -41,12 +41,16 @@ function Description({ item, followChannelHandler }) {
           expanded={false}
           truncatedEndingComponent={"... "}
         >
-          {/* {item.videoData.name}
-          {item.videoData.hashtag?.map((item) => (
-            // <Link to={`/tag/${item.name}`} key={item.id}>
-              <span>#{item.name}</span>
-            // </Link>
-          ))} */}
+          Lê Bảo - Dự báo thời tiết
+          {data.map(({name, hashtag}) => (
+            <Link>
+              <span>#lebao </span>
+              <span>#xuhuong2023 </span>
+              <span>#lebao </span>
+              <span>#testiq </span>
+              <span>#trendingtiktok#</span>
+            </Link>
+          ))}
         </ShowMoreText>
       </div>
     </div>

@@ -22,12 +22,12 @@ function ShortVideo(pageId = "for_you") {
   const [swiperIndex, setSwiperIndex] = useState(0);
   // const [allData, setAllData] = useState([]);
   
-  const [videoParam, setVideoParam] = useState({
-    limit: 12,
-    offset: 0,
-    id: pageId,
-    page: "shorts",
-  });
+  // const [videoParam, setVideoParam] = useState({
+  //   limit: 12,
+  //   offset: 0,
+  //   id: pageId,
+  //   page: "shorts",
+  // });
 
   const user = getUser();
 
@@ -84,19 +84,15 @@ function ShortVideo(pageId = "for_you") {
       doubleClick: false,
     },
   };
-  // const followChannelHandler = async (id, currentStatus, channelId) => {
-  //   if (!user) {
-  //     setShowLoginRequiredDialog(true);
-  //     return;
-  //   }
-  //   const payload = {
-  //     id,
-  //     status: 1,
-  //     notification_type: 1,
-  //   };
-  //   if (currentStatus) {
-  //     payload.status = 0;
-  //   }
+  const followChannelHandler = async (id, currentStatus, channelId) => {
+    const payload = {
+      id,
+      status: 1,
+      notification_type: 1,
+    };
+    if (currentStatus) {
+      payload.status = 0;
+    }}
   //   const data = await chanelServices.followChannel(payload);
 
   //   if (data.responseCode === "200") {
@@ -181,14 +177,14 @@ function ShortVideo(pageId = "for_you") {
             setSwiperIndex(e.realIndex);
             setIsMuted(false);
           }}
-          onReachEnd={(e) => {
-            if (e.realIndex > 0) {
-              setVideoParam((old) => ({
-                ...old,
-                offset: old.offset + old.limit,
-              }));
-            }
-          }}
+          // onReachEnd={(e) => {
+          //   if (e.realIndex > 0) {
+          //     setVideoParam((old) => ({
+          //       ...old,
+          //       offset: old.offset + old.limit,
+          //     }));
+          //   }
+          // }}
           noSwipingClass="player"
         >
           {

@@ -20,6 +20,7 @@
 
 import FollowVideo from "../components/FollowVideo";
 import HashTag from "../components/HashTag";
+// import LoveVideo from "../components/LoveVideo";
 import ShortVideo from "../components/ShortVideo";
 import VideoLayout from "../layouts/VideoLayout";
 
@@ -89,10 +90,10 @@ const videoRoute = {
   path: "*",
   element: <VideoLayout />,
   children: [
-    // {
-    //   index: true,
-    //   element: <ShortVideo />,
-    // },
+    {
+      index: true,
+      element: <ShortVideo />,
+    },
     {
       path: "danh-cho-ban",
       element: <ShortVideo />,
@@ -105,6 +106,10 @@ const videoRoute = {
       path: "hashtag",
       element: <HashTag />,
   },
+  // {
+  //   path: "yeu-thich",
+  //   element: <LoveVideo/>
+  // }
     
 
     // {
