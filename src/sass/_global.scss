@@ -71,6 +71,7 @@ body {
 .main {
   display: flex;
   overflow-y: auto;
+  max-height: calc(100vh - 90px);
   &__page {
     width: 100%;
     flex: 1;
