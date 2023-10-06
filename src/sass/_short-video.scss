@@ -1,12 +1,12 @@
 .short-video {
-  min-height: calc(100vh - 120px);
+  overflow-y: hidden;
+  min-height: calc(100vh - 100px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
   align-items: center;
   gap: 60px;
-
   padding-bottom: 60px;
   height: calc(100vh - 180px);
 

@@ -15,6 +15,7 @@ import ArrowLight from "../assets/img/ArrowLight.svg";
 import { getUser } from "../utils/localStorage";
 import { CircularProgress } from "@mui/material";
 import Description from "./Description";
+import Butterfly from "../assets/video/Butterfly.mp4"
 
 function ShortVideo(pageId = "for_you") {
   const [showLoginRequiredDialog, setShowLoginRequiredDialog] = useState(false);
@@ -83,6 +84,7 @@ function ShortVideo(pageId = "for_you") {
     userActions: {
       doubleClick: false,
     },
+   
   };
   const followChannelHandler = async (id, currentStatus, channelId) => {
     const payload = {
@@ -175,14 +177,30 @@ function ShortVideo(pageId = "for_you") {
   //   urlStreaming:
   //     "http://s3media.mobion.vn/mobion-media-202307/uploads/2023/07/shortvideo1/short_video_1_abr.m3u8",
   // };
-  const videoData = [{
-    data: "http://s3media.mobion.vn/mobion-media-202307/uploads/2023/07/shortvideo1/short_video_1_abr.m3u8"
-  }]
   const allData = [
     {
-      // coverImage:
-      //   "https://images.pexels.com/photos/2754200/pexels-photo-2754200.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-        data: "http://s3media.mobion.vn/mobion-media-202307/uploads/2023/07/shortvideo1/short_video_1_abr.m3u8"
+      sources: [
+        {
+          src: Butterfly,
+          type: "video/mp4"
+        }
+      ]
+    },
+    {
+      sources: [
+        {
+          src: Butterfly,
+          type: "video/mp4"
+        }
+      ]
+    },
+    {
+      sources: [
+        {
+          src: Butterfly,
+          type: "video/mp4"
+        }
+      ]
     },
   ];
   return (
@@ -223,7 +241,7 @@ function ShortVideo(pageId = "for_you") {
                       options={{
                         ...videoJsOptions,
                         // poster: allData[index]?.videoData.coverImage,
-                        sources: "http://s3media.mobion.vn/mobion-media-202307/uploads/2023/07/shortvideo1/short_video_1_abr.m3u8",
+                        sources: item.sources,
                       }}
                       setVolumeInit={(flagMute) => setVolumeInit(flagMute)}
                     />
@@ -233,7 +251,7 @@ function ShortVideo(pageId = "for_you") {
                       : (
                       <img
                         src={
-                          allData[index]?.videoData.coverImage ||
+                          // allData[index]?.videoData.coverImage ||
                           "https://images.unsplash.com/photo-1680816740728-1bb49a507c94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
                         }
                         alt=""
