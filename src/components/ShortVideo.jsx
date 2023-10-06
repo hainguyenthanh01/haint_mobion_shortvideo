@@ -16,6 +16,8 @@ import { getUser } from "../utils/localStorage";
 import { CircularProgress } from "@mui/material";
 import Description from "./Description";
 import Butterfly from "../assets/video/Butterfly.mp4"
+import OnePiece from "../assets/video/OnePiece.mp4"
+import Zoro from "../assets/video/Zoro.mp4"
 
 function ShortVideo(pageId = "for_you") {
   const [showLoginRequiredDialog, setShowLoginRequiredDialog] = useState(false);
@@ -189,7 +191,7 @@ function ShortVideo(pageId = "for_you") {
     {
       sources: [
         {
-          src: Butterfly,
+          src: OnePiece,
           type: "video/mp4"
         }
       ]
@@ -197,7 +199,7 @@ function ShortVideo(pageId = "for_you") {
     {
       sources: [
         {
-          src: Butterfly,
+          src: Zoro,
           type: "video/mp4"
         }
       ]
