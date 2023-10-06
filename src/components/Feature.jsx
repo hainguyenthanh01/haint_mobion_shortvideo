@@ -13,7 +13,9 @@ import { getUser } from "../utils/localStorage";
 // import LoginRequiredDialog from "../Dialogs/LoginRequiredDialog";
 
 function Feature({ featureData, allDataLove = [], setAllDataLove = () => {} }) {
-  const [liked, setLiked] = useToggle(featureData?.isFavourite);
+  const [liked, setLiked] = useToggle(false);
+
+  // const [liked, setLiked] = useToggle(featureData?.isFavourite);
   // const [likedCount, setLikedCount] = useState(featureData.likeCount);
   // const [totalCommentCount, setTotalCommentCount] = useState(
   //   featureData.totalComment
@@ -26,17 +28,18 @@ function Feature({ featureData, allDataLove = [], setAllDataLove = () => {} }) {
   const user = getUser();
 
   const likeHandler = async () => {
-    if (!user) {
-      setShowLoginRequiredDialog(true);
-      return;
-    }
-    const payload = {
-      id: featureData.id,
-      status: 1,
-    };
-    if (liked) {
-      payload.status = 0;
-    }
+    setLiked()
+    // if (!user) {
+    //   setShowLoginRequiredDialog(true);
+    //   return;
+    // }
+    // const payload = {
+    //   id: featureData.id,
+    //   status: 1,
+    // };
+    // if (liked) {
+    //   payload.status = 0;
+    // }
 
     // const data = await videoService.lovedVideo(payload);
     // let newLikeCount;

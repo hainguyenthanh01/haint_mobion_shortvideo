@@ -82,27 +82,27 @@ const [showFollowVideo, setShowFollowVideo] = useState(false);
   const discovery = [
     {
       text: "lebao",
-      link: "/hashtag"
+      link: "/hashtag/lebao"
     },
     {
       text: "trending",
-      link: "/hashtag"
+      link: "/hashtag/trending"
     },
     {
       text: "hot",
-      link: "/hashtag"
+      link: "/hashtag/hot"
     },
     {
       text: "food",
-      link: "/hashtag"
+      link: "/hashtag/food"
     },
     {
       text: "foryou",
-      link: "/hashtag"
+      link: "/hashtag/foryou"
     },
     {
       text: "xuhuong",
-      link: "/hashtag"
+      link: "/hashtag/xuhuong"
     },
   ];
   const service = [

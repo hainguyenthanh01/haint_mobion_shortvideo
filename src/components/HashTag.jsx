@@ -11,7 +11,7 @@ import LoadMore from "./LoadMore";
 function HashTag() {
   // const location = useLocation();
   // const { hashtagId } = useParams();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   // const [listDataHastag, setListDataHastag] = useState([]);
   // const [fetchData, setFetchData] = useState(false);
   // const [limit, setLimit] = useState(18);

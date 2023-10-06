@@ -20,6 +20,7 @@
 
 import FollowVideo from "../components/FollowVideo";
 import HashTag from "../components/HashTag";
+import LoveVideo from "../components/LoveVideo";
 // import LoveVideo from "../components/LoveVideo";
 import ShortVideo from "../components/ShortVideo";
 import VideoLayout from "../layouts/VideoLayout";
@@ -103,7 +104,7 @@ const videoRoute = {
         element: <FollowVideo />,
     },
     {
-      path: "hashtag",
+      path: "hashtag/:hashtagId",
       element: <HashTag />,
   },
   // {

@@ -21,7 +21,7 @@ function ShortVideo(pageId = "for_you") {
   const [isMuted, setIsMuted] = useToggle(false);
   const [swiperIndex, setSwiperIndex] = useState(0);
   // const [allData, setAllData] = useState([]);
-  
+
   // const [videoParam, setVideoParam] = useState({
   //   limit: 12,
   //   offset: 0,
@@ -92,7 +92,8 @@ function ShortVideo(pageId = "for_you") {
     };
     if (currentStatus) {
       payload.status = 0;
-    }}
+    }
+  };
   //   const data = await chanelServices.followChannel(payload);
 
   //   if (data.responseCode === "200") {
@@ -155,100 +156,121 @@ function ShortVideo(pageId = "for_you") {
     localStorage.setItem("muted", isMuted ? 0 : 1);
     setIsMuted();
   };
+  // const steams = {
+  //   disableSeek: true,
+  //   errorCode: 200,
+  //   maxDuration: 60,
+  //   maxProfile: "",
+  //   message: "Thành công",
+  //   msgProfile: "",
+  //   numVideoFree: 0,
+  //   popupObj: {
+  //     is_register_sub: 1,
+  //     confirm_register_sub:
+  //       "Để xem tiếp video “Say Hi ! Chim Vành Khuyên Nhỏ”,…obiOn và nhận ngay ưu đãi lưu lượng data hấp dẫn.",
+  //     package_id: 78,
+  //     package_name: "Gói đặc biệt",
+  //     package_fee: 6000,
+  //   },
+  //   urlStreaming:
+  //     "http://s3media.mobion.vn/mobion-media-202307/uploads/2023/07/shortvideo1/short_video_1_abr.m3u8",
+  // };
+  const videoData = [{
+    data: "http://s3media.mobion.vn/mobion-media-202307/uploads/2023/07/shortvideo1/short_video_1_abr.m3u8"
+  }]
   const allData = [
     {
-      coverImage: "https://images.pexels.com/photos/2754200/pexels-photo-2754200.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-    }
-  ]
+      // coverImage:
+      //   "https://images.pexels.com/photos/2754200/pexels-photo-2754200.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        data: "http://s3media.mobion.vn/mobion-media-202307/uploads/2023/07/shortvideo1/short_video_1_abr.m3u8"
+    },
+  ];
   return (
     <div className="short-video">
       <SwiperComponent
-          direction="vertical"
-          spaceBetween={44}
-          modules={[Navigation, Mousewheel, Keyboard]}
-          keyboard={true}
-          slidesPerView={1}
-          responsive={true}
-          allowTouchMove={false}
-          navigation
-          lazy
-          mousewheel={true}
-          onSlideChange={(e) => {
-            setSwiperIndex(e.realIndex);
-            setIsMuted(false);
-          }}
-          // onReachEnd={(e) => {
-          //   if (e.realIndex > 0) {
-          //     setVideoParam((old) => ({
-          //       ...old,
-          //       offset: old.offset + old.limit,
-          //     }));
-          //   }
-          // }}
-          noSwipingClass="player"
-        >
-          {
-            allData.map((item, index) => (
-              <SwiperSlide key={index}>
-                <div className="card">
-                  <div className="card__video">
-                    <div className="player">
-                      {swiperIndex === index ? (
-                        <VideoJS
-                          options={{
-                            ...videoJsOptions,
-                            // poster: allData[index]?.videoData.coverImage,
-                            // sources: item,
-                          }}
-                          setVolumeInit={(flagMute) => setVolumeInit(flagMute)}
-                        />
-                      ) : (
-                        <div className="card__video__backdrop-img">
-                          
-                            <CircularProgress color="inherit" />
-                           : (
-                            <img
-                              src={
-                                allData[index]?.videoData.coverImage ||
-                                "https://images.unsplash.com/photo-1680816740728-1bb49a507c94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-                              }
-                              alt=""
-                            />
-                          )
-                        </div>
-                      )}
-                    </div>
-                    {swiperIndex === index && (
-                      <div className="card__header">
-                        {isMuted ? (
-                          <img
-                            src={Muted}
-                            alt=""
-                            className="card__speaker"
-                            onClick={volumeChangeHandler}
-                          />
-                        ) : (
-                          <img
-                            src={Unmuted}
-                            alt=""
-                            className="card__speaker"
-                            onClick={volumeChangeHandler}
-                          />
-                        )}
-                      </div>
-                    )}
-                    <Description
-                      item={item}
-                    />
-                  </div>
+        direction="vertical"
+        spaceBetween={44}
+        modules={[Navigation, Mousewheel, Keyboard]}
+        keyboard={true}
+        slidesPerView={1}
+        responsive={true}
+        allowTouchMove={false}
+        navigation
+        lazy
+        mousewheel={true}
+        onSlideChange={(e) => {
+          setSwiperIndex(e.realIndex);
+          setIsMuted(false);
+        }}
+        // onReachEnd={(e) => {
+        //   if (e.realIndex > 0) {
+        //     setVideoParam((old) => ({
+        //       ...old,
+        //       offset: old.offset + old.limit,
+        //     }));
+        //   }
+        // }}
+        noSwipingClass="player"
+      >
+        {allData.map((item, index) => (
 
-                  <Feature />
+          <SwiperSlide key={index}>
+            <div className="card">
+              <div className="card__video">
+                <div className="player">
+                  {swiperIndex === index ? (         
+                    <VideoJS
+                      options={{
+                        ...videoJsOptions,
+                        // poster: allData[index]?.videoData.coverImage,
+                        sources: "http://s3media.mobion.vn/mobion-media-202307/uploads/2023/07/shortvideo1/short_video_1_abr.m3u8",
+                      }}
+                      setVolumeInit={(flagMute) => setVolumeInit(flagMute)}
+                    />
+                  ) : (
+                    <div className="card__video__backdrop-img">
+                      <CircularProgress color="inherit" />
+                      : (
+                      <img
+                        src={
+                          allData[index]?.videoData.coverImage ||
+                          "https://images.unsplash.com/photo-1680816740728-1bb49a507c94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                        }
+                        alt=""
+                      />
+                      )
+                    </div>
+                  )}
                 </div>
-              </SwiperSlide>
-            ))}
-        </SwiperComponent>
+                {swiperIndex === index && (
+                  <div className="card__header">
+                    {isMuted ? (
+                      <img
+                        src={Muted}
+                        alt=""
+                        className="card__speaker"
+                        onClick={volumeChangeHandler}
+                      />
+                    ) : (
+                      <img
+                        src={Unmuted}
+                        alt=""
+                        className="card__speaker"
+                        onClick={volumeChangeHandler}
+                      />
+                    )}
+                  </div>
+                )}
+                <Description item={item} />
+              </div>
+
+              <Feature />
+            </div>
+          </SwiperSlide>
+        ))}
+      </SwiperComponent>
     </div>
-  )
+  );
 }
 
 export default ShortVideo;

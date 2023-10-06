@@ -9,13 +9,13 @@ import { Swiper as SwiperComponent, SwiperSlide } from "swiper/react";
 import { Navigation, Mousewheel, Keyboard } from "swiper";
 import "swiper/swiper-bundle.min.css";
 import Feature from "./Feature";
-import { useLove } from "../hooks/useLove";
+// import { useLove } from "../hooks/useLove";
 
 import Muted from "../assets/img/muted.svg";
 import Unmuted from "../assets/img/Unmuted.svg";
 import ArrowLight from "../assets/img/ArrowLight.svg";
 import Description from "./Description";
-import chanelServices from "../services/chanel";
+// import chanelServices from "../services/chanel";
 
 let isScrollLoading = false;
 let disabledScroll = false;
@@ -25,13 +25,13 @@ function LoveVideo() {
   const [swiperIndex, setSwiperIndex] = useState(0);
   const [swiperData, setSwiperData] = useState(null);
   const [loveTab, setLoveTab] = useState(true);
-  const [allData, setAllData] = useState(true);
+  // const [allData, setAllData] = useState(true);
   const [videoParam, setVideoParam] = useState({
     limit: 12,
     offset: 0,
   });
 
-  const { allLoveVideo, allSaveVideo } = useLove(videoParam);
+  // const { allLoveVideo, allSaveVideo } = useLove(videoParam);
 
   const followChannelHandler = async (id, currentStatus, channelId) => {
     const payload = {
@@ -42,18 +42,21 @@ function LoveVideo() {
     if (currentStatus) {
       payload.status = 0;
     }
-    const data = await chanelServices.followChannel(payload);
+    // const data = await chanelServices.followChannel(payload);
 
-    if (data.responseCode === "200") {
-      const newData = allData.map((item) =>
-        item.videoData.channelId === channelId
-          ? { ...item, isFollow: !currentStatus }
-          : item
-      );
+    // if (data.responseCode === "200") {
+    //   const newData = allData.map((item) =>
+    //     item.videoData.channelId === channelId
+    //       ? { ...item, isFollow: !currentStatus }
+    //       : item
+    //   );
 
-      setAllData(newData);
-    }
+    //   setAllData(newData);
+    // }
   };
+  const allData = [{}]
+
+  const allSaveVideo = [{}]
 
   const slideTo = (index) => swiperData.slideTo(index);
 
@@ -93,45 +96,45 @@ function LoveVideo() {
     }
   }, [loveTab]);
 
-  useEffect(() => {
-    disabledScroll = false;
-    if (allLoveVideo && loveTab) {
-      const newListData = allLoveVideo?.content.map((item) => ({
-        src: item.streams.urlStreaming,
-        type: "application/x-mpegURL",
-        isFollow: item?.isFollowChannel,
-        videoData: item,
-        id: item.id,
-      }));
-      if (newListData.length < videoParam.limit) {
-        disabledScroll = true;
-      }
-      if (videoParam.offset === 0) {
-        setAllData(newListData);
-      } else {
-        const newConcatData = [...allData, ...newListData];
-        setAllData(newConcatData);
-      }
-    } else if (allSaveVideo && !loveTab) {
-      const newListData = allSaveVideo?.content.map((item) => ({
-        src: item.streams.urlStreaming,
-        type: "application/x-mpegURL",
-        isFollow: item?.isFollowChannel,
-        videoData: item,
-        id: item.id,
-      }));
-      if (newListData.length < videoParam.limit) {
-        disabledScroll = true;
-      }
+  // useEffect(() => {
+  //   disabledScroll = false;
+  //   if (allLoveVideo && loveTab) {
+  //     const newListData = allLoveVideo?.content.map((item) => ({
+  //       src: item.streams.urlStreaming,
+  //       type: "application/x-mpegURL",
+  //       isFollow: item?.isFollowChannel,
+  //       videoData: item,
+  //       id: item.id,
+  //     }));
+  //     if (newListData.length < videoParam.limit) {
+  //       disabledScroll = true;
+  //     }
+  //     if (videoParam.offset === 0) {
+  //       setAllData(newListData);
+  //     } else {
+  //       const newConcatData = [...allData, ...newListData];
+  //       setAllData(newConcatData);
+  //     }
+  //   } else if (allSaveVideo && !loveTab) {
+  //     const newListData = allSaveVideo?.content.map((item) => ({
+  //       src: item.streams.urlStreaming,
+  //       type: "application/x-mpegURL",
+  //       isFollow: item?.isFollowChannel,
+  //       videoData: item,
+  //       id: item.id,
+  //     }));
+  //     if (newListData.length < videoParam.limit) {
+  //       disabledScroll = true;
+  //     }
 
-      if (videoParam.offset === 0) {
-        setAllData(newListData);
-      } else {
-        const newConcatData = [...allData, ...newListData];
-        setAllData(newConcatData);
-      }
-    }
-  }, [allLoveVideo, allSaveVideo, loveTab]);
+  //     if (videoParam.offset === 0) {
+  //       setAllData(newListData);
+  //     } else {
+  //       const newConcatData = [...allData, ...newListData];
+  //       setAllData(newConcatData);
+  //     }
+  //   }
+  // }, [allLoveVideo, allSaveVideo, loveTab]);
 
   const videoJsOptions = {
     autoplay: true,
@@ -227,62 +230,58 @@ function LoveVideo() {
         }}
         noSwipingClass="player"
       >
-        {allData?.length > 0 &&
-          allData.map((item, index) => (
-            <SwiperSlide key={item.videoData.id}>
-              <div className="card">
-                <div className="card__video">
-                  <div className="player">
-                    {swiperIndex === index ? (
-                      <VideoJS
-                        options={{
-                          ...videoJsOptions,
-                          poster: allData[index]?.videoData.coverImage,
-                          sources: item,
-                        }}
-                        setVolumeInit={(flagMute) => setVolumeInit(flagMute)}
+        {allData.map((item, index) => (
+          <SwiperSlide key={index}>
+            <div className="card">
+              <div className="card__video">
+                <div className="player">
+                  {swiperIndex === index ? (
+                    <VideoJS
+                      options={{
+                        ...videoJsOptions,
+                        // poster: allData[index]?.videoData.coverImage,
+                        // sources: item,
+                      }}
+                      setVolumeInit={(flagMute) => setVolumeInit(flagMute)}
+                    />
+                  ) : (
+                    <div className="card__video__backdrop-img">
+                      <img
+                        src={
+                          allData[index]?.videoData.coverImage ||
+                          "https://images.unsplash.com/photo-1680816740728-1bb49a507c94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                        }
+                        alt=""
                       />
-                    ) : (
-                      <div className="card__video__backdrop-img">
-                        <img
-                          src={
-                            allData[index].videoData?.coverImage ||
-                            "https://images.unsplash.com/photo-1680816740728-1bb49a507c94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-                          }
-                          alt=""
-                        />
-                      </div>
-                    )}
-                  </div>
-                  {swiperIndex === index && (
-                    <div className="card__header">
-                      {isMuted ? (
-                        <img
-                          src={Muted}
-                          alt=""
-                          className="card__speaker"
-                          onClick={volumeChangeHandler}
-                        />
-                      ) : (
-                        <img
-                          src={Unmuted}
-                          alt=""
-                          className="card__speaker"
-                          onClick={volumeChangeHandler}
-                        />
-                      )}
                     </div>
                   )}
-                  <Description
-                    followChannelHandler={followChannelHandler}
-                    item={item}
-                  />
                 </div>
-
-                <Feature featureData={item.videoData} allDataLove={allData} setAllDataLove={setAllData} />
+                {swiperIndex === index && (
+                  <div className="card__header">
+                    {isMuted ? (
+                      <img
+                        src={Muted}
+                        alt=""
+                        className="card__speaker"
+                        onClick={volumeChangeHandler}
+                      />
+                    ) : (
+                      <img
+                        src={Unmuted}
+                        alt=""
+                        className="card__speaker"
+                        onClick={volumeChangeHandler}
+                      />
+                    )}
+                  </div>
+                )}
+                <Description item={item} />
               </div>
-            </SwiperSlide>
-          ))}
+
+              <Feature />
+            </div>
+          </SwiperSlide>
+        ))}
       </SwiperComponent>
 
       <ShortStored
