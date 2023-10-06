@@ -20,7 +20,8 @@ function Feature({ featureData, allDataLove = [], setAllDataLove = () => {} }) {
   // const [totalCommentCount, setTotalCommentCount] = useState(
   //   featureData.totalComment
   // );
-  const [saved, setSaved] = useToggle(featureData?.isSave || false);
+  // const [saved, setSaved] = useToggle(featureData?.isSave || false);
+  const [saved, setSaved] = useToggle(false)
   const [showComment, setShowComment] = useState(false);
   const [showShare, setShowShare] = useState(false);
   const [showLoginRequiredDialog, setShowLoginRequiredDialog] = useState(false);
@@ -61,17 +62,18 @@ function Feature({ featureData, allDataLove = [], setAllDataLove = () => {} }) {
     // }
   };
   const saveHandler = async () => {
-    if (!user) {
-      setShowLoginRequiredDialog(true);
-      return;
-    }
-    const payload = {
-      id: featureData.id,
-      status: 1,
-    };
-    if (saved) {
-      payload.status = 0;
-    }
+    setSaved()
+    // if (!user) {
+    //   setShowLoginRequiredDialog(true);
+    //   return;
+    // }
+    // const payload = {
+    //   id: featureData.id,
+    //   status: 1,
+    // };
+    // if (saved) {
+    //   payload.status = 0;
+    // }
 
     // const data = await videoService.savedVideo(payload);
 
