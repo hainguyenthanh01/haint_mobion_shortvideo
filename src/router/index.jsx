@@ -107,10 +107,10 @@ const videoRoute = {
       path: "hashtag/:hashtagId",
       element: <HashTag />,
   },
-  // {
-  //   path: "yeu-thich",
-  //   element: <LoveVideo/>
-  // }
+  {
+    path: "yeu-thich",
+    element: <LoveVideo/>
+  }
     
 
     // {

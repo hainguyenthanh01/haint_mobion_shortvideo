@@ -150,8 +150,8 @@ function Notification({ setShowNotification, showNotification }) {
       </div>
 
       <div ref={refNoti} className="notification__list">
-        {listDataNoitifi?.length > 0 ? (
-          listDataNoitifi?.map((item) => (
+        {listDataNoiti?.length > 0 ? (
+          listDataNoiti?.map((item) => (
             <div key={item} className="notification__item">
               {/* {!item?.is_read && <div className="notification__viewed"></div>} */}
               <img

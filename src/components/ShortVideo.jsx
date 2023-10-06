@@ -289,6 +289,32 @@ function ShortVideo(pageId = "for_you") {
           </SwiperSlide>
         ))}
       </SwiperComponent>
+      <div className="short-video__redirect-btn">
+        <img
+          src={ArrowLight}
+          alt=""
+          onClick={preVideoHandler}
+          style={{
+            opacity: document
+              .querySelector(".swiper-button-prev")
+              ?.classList.contains("swiper-button-disabled")
+              ? ".4"
+              : "1",
+          }}
+        />
+        <img
+          src={ArrowLight}
+          alt=""
+          onClick={nextVideoHandler}
+          style={{
+            opacity: document
+              .querySelector(".swiper-button-next")
+              ?.classList.contains("swiper-button-disabled")
+              ? ".4"
+              : "1",
+          }}
+        />
+      </div>
     </div>
   );
 }

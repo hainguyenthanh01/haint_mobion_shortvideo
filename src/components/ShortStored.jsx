@@ -5,13 +5,16 @@ import Emitting from "../assets/img/Emitting.svg";
 import ImgBoxEmpty from "./ImgBoxEmpty";
 
 function ShortStored({
-  data,
   swiperIndex,
   slideTo,
   loveTab,
   setLoveTab,
   boxContentRef,
 }) {
+
+  const data = [{
+    name: "Những đứa trẻ làng quê"
+  }]
   return (
     <div className="short-loved">
       <div className="short-loved__header">
@@ -53,7 +56,7 @@ function ShortStored({
                   className="list-short__item-img"
                 />
                 {index !== swiperIndex && (
-                  <h4 className="list-short__des">{item.videoData.name}</h4>
+                  <h4 className="list-short__des">{item.name}</h4>
                 )}
                 {index === swiperIndex && (
                   <div className="list-short__backdrop">

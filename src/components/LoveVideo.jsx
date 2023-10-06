@@ -15,7 +15,11 @@ import Muted from "../assets/img/muted.svg";
 import Unmuted from "../assets/img/Unmuted.svg";
 import ArrowLight from "../assets/img/ArrowLight.svg";
 import Description from "./Description";
+
 // import chanelServices from "../services/chanel";
+import Butterfly from "../assets/video/Butterfly.mp4"
+import OnePiece from "../assets/video/OnePiece.mp4"
+import Zoro from "../assets/video/Zoro.mp4"
 
 let isScrollLoading = false;
 let disabledScroll = false;
@@ -54,47 +58,72 @@ function LoveVideo() {
     //   setAllData(newData);
     // }
   };
-  const allData = [{}]
+  const allData = [
+    {
+      sources: [
+        {
+          src: Butterfly,
+          type: "video/mp4"
+        }
+      ]
+    },
+    {
+      sources: [
+        {
+          src: OnePiece,
+          type: "video/mp4"
+        }
+      ]
+    },
+    {
+      sources: [
+        {
+          src: Zoro,
+          type: "video/mp4"
+        }
+      ]
+    },
+  ];
 
   const allSaveVideo = [{}]
 
-  const slideTo = (index) => swiperData.slideTo(index);
+  // const slideTo = (index) => swiperData.slideTo(index);
 
-  const boxContentRef = useRef();
+  // const boxContentRef = useRef();
 
-  useEffect(() => {
-    const div = boxContentRef.current;
-    if (div) {
-      const handleScroll = () => {
-        const { scrollTop, scrollHeight, clientHeight } = boxContentRef.current;
+  // useEffect(() => {
+  //   const div = boxContentRef.current;
+  //   if (div) {
+  //     const handleScroll = () => {
+  //       const { scrollTop, scrollHeight, clientHeight } = boxContentRef.current;
 
-        if (
-          scrollTop + clientHeight + 200 >= scrollHeight &&
-          !isScrollLoading &&
-          !disabledScroll &&
-          allData.length > 0
-        ) {
-          isScrollLoading = true;
+  //       if (
+  //         scrollTop + clientHeight + 200 >= scrollHeight &&
+  //         !isScrollLoading &&
+  //         !disabledScroll &&
+  //         allData.length > 0
+  //       ) {
+  //         isScrollLoading = true;
 
-          setVideoParam((old) => ({
-            ...old,
-            offset: old.offset + old.limit,
-          }));
-        }
-      };
-      div.addEventListener("scroll", handleScroll);
+  //         setVideoParam((old) => ({
+  //           ...old,
+  //           offset: old.offset + old.limit,
+  //         }));
+  //       }
+  //     };
+  //     div.addEventListener("scroll", handleScroll);
 
-      return () => {
-        div.removeEventListener("scroll", handleScroll);
-      };
-    }
-  }, [boxContentRef.current, allData]);
+  //     return () => {
+  //       div.removeEventListener("scroll", handleScroll);
+  //     };
+  //   }
+  // }, [boxContentRef.current, allData]);
 
-  useEffect(() => {
-    if (swiperData) {
-      slideTo(0);
-    }
-  }, [loveTab]);
+  // useEffect(() => {
+  //   if (swiperData) {
+  //     slideTo(0);
+  //   }
+  // }, [loveTab]);
 
   // useEffect(() => {
   //   disabledScroll = false;
@@ -240,7 +269,7 @@ function LoveVideo() {
                       options={{
                         ...videoJsOptions,
                         // poster: allData[index]?.videoData.coverImage,
-                        // sources: item,
+                        sources: item.sources,
                       }}
                       setVolumeInit={(flagMute) => setVolumeInit(flagMute)}
                     />
@@ -248,7 +277,7 @@ function LoveVideo() {
                     <div className="card__video__backdrop-img">
                       <img
                         src={
-                          allData[index]?.videoData.coverImage ||
+                          // allData[index]?.videoData.coverImage ||
                           "https://images.unsplash.com/photo-1680816740728-1bb49a507c94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
                         }
                         alt=""
@@ -285,12 +314,12 @@ function LoveVideo() {
       </SwiperComponent>
 
       <ShortStored
-        data={allData}
-        swiperIndex={swiperIndex}
-        slideTo={slideTo}
-        loveTab={loveTab}
-        setLoveTab={setLoveTab}
-        boxContentRef={boxContentRef}
+        // data={allData}
+        // swiperIndex={swiperIndex}
+        // slideTo={slideTo}
+        // loveTab={loveTab}
+        // setLoveTab={setLoveTab}
+        // boxContentRef={boxContentRef}
       />
 
       <div className="short-video__redirect-btn">
