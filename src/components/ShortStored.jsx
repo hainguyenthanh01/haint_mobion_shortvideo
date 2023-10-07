@@ -6,15 +6,17 @@ import ImgBoxEmpty from "./ImgBoxEmpty";
 
 function ShortStored({
   swiperIndex,
-  slideTo,
+  slideTo = () => {},
   loveTab,
-  setLoveTab=()=>{},
+  setLoveTab = () => {},
   boxContentRef,
 }) {
-
-  const data = [{
-    name: "Những đứa trẻ làng quê"
-  }]
+  const data = [
+    {
+      name: "Những đứa trẻ làng quê",
+      img: "https://cdn.24h.com.vn/upload/1-2022/images/2022-01-17/Le-Bong-gay-tranh-cai-khi-di-thi-hoa-hau-lo-chan-cot-dinh-khac-xa-tren-anh-b1-1642383834-549-width1000height1501.jpeg",
+    },
+  ];
   return (
     <div className="short-loved">
       <div className="short-loved__header">
@@ -48,22 +50,22 @@ function ShortStored({
               <div
                 className="list-short__item"
                 key={index}
-                onClick={() => slideTo(index)}
+                // onClick={() => slideTo(index)}
               >
                 <img
-                  src={item.videoData?.coverImage || "VideoDemo.png"}
+                  // src={item.videoData?.coverImage || "VideoDemo.png"}
+                  src={item.img}
                   alt="video đã thích"
                   className="list-short__item-img"
                 />
                 {index !== swiperIndex && (
                   <h4 className="list-short__des">{item.name}</h4>
                 )}
-                {index === swiperIndex && (
-                  <div className="list-short__backdrop">
-                    <img src={Emitting} alt="" width={32} height={32} />
-                    <span>Đang xem </span>
-                  </div>
-                )}
+
+                <div className="list-short__backdrop">
+                  <img src={Emitting} alt="" width={32} height={32} />
+                  <span>Đang xem </span>
+                </div>
               </div>
             ))}
         </div>
