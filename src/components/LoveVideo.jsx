@@ -28,7 +28,7 @@ function LoveVideo() {
 
   const [swiperIndex, setSwiperIndex] = useState(0);
   const [swiperData, setSwiperData] = useState(null);
-  const [loveTab, setLoveTab] = useState(true);
+  // const [loveTab, setLoveTab] = useState(true);
   // const [allData, setAllData] = useState(true);
   const [videoParam, setVideoParam] = useState({
     limit: 12,

@@ -8,7 +8,7 @@ function ShortStored({
   swiperIndex,
   slideTo,
   loveTab,
-  setLoveTab,
+  setLoveTab=()=>{},
   boxContentRef,
 }) {
 
