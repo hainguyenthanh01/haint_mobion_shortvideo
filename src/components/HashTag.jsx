@@ -199,7 +199,7 @@ function HashTag() {
         <div className="channel-page__info-head">
             <ImageDefaultHastag />
           <div className="channel-page__info-name">
-            <h2>#lebao</h2>
+            <h2>#mixigaming</h2>
             <p>1,5K lượt xem</p>
           </div>
           <div className="channel-page__info-groupBtn">

@@ -18,8 +18,10 @@
 // import { Navigate, useLocation } from "react-router-dom";
 // import { setReqPage } from "../utils/auth";
 
+import Channel from "../components/Channel";
 import FollowVideo from "../components/FollowVideo";
 import HashTag from "../components/HashTag";
+import LiveStream from "../components/LiveStream";
 import LoveVideo from "../components/LoveVideo";
 // import LoveVideo from "../components/LoveVideo";
 import ShortVideo from "../components/ShortVideo";
@@ -110,6 +112,14 @@ const videoRoute = {
   {
     path: "yeu-thich",
     element: <LoveVideo/>
+  },
+  {
+    path: "channel/:channelId",
+    element: <Channel/>
+  },
+  {
+    path: "live",
+    element: <LiveStream/>
   }
     
 

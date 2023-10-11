@@ -67,16 +67,19 @@ const [showFollowVideo, setShowFollowVideo] = useState(false);
       text: "Akiraphan",
       image: Akiraphan,
       number: 3,
+      link: "/channel/akiraphan"
     },
     {
       text: "Châu Khải Phong",
       image: Phong,
       number: 4,
+      link: "/channel/chaukhaiphong"
     },
     {
       text: "V-Pop Hot",
       image: Vpop,
       number: 5,
+      link: "/channel/vpop"
     },
   ];
   const discovery = [
@@ -110,26 +113,32 @@ const [showFollowVideo, setShowFollowVideo] = useState(false);
       text: "TV Show",
       image: TVShow,
       link: "http://tvshow.mobion.vn/",
+      
+
     },
     {
       text: "Phim",
       image: Phim,
       link: "http://phim.mobion.vn/",
+ 
     },
     {
       text: "Nhạc",
       image: Nhac,
       link: "http://nhac.mobion.vn/",
+ 
     },
     {
       text: "eSports",
       image: ESport,
       link: "http://esport.mobion.vn/",
+      
     },
     {
       text: "Kids",
       image: Kids,
       link: "http://kid.mobion.vn/",
+  
     },
     {
       text: "Tin Nhanh",
@@ -193,23 +202,24 @@ const [showFollowVideo, setShowFollowVideo] = useState(false);
           <h3 className="channels-pri__title">
             Kênh đề xuất
           </h3>
-          {menuChannel.map((item, index) => 
+          {menuChannel.map(({ text, link, image, number }) => 
              (
                 <div
                   style={{ color: "white" }}
                 >
-                  <div className="channel">
+                  <div className="channel" onClick={()=>{
+                navigate(link)}}>
                     <img
-                      src={item.image}
+                      src={image}
                       alt=""
                       className="channel__avatar"
                       width={40}
                       height={40}
                     />
                     <div className="channel__des">
-                      <p className="channel__name">{item.text}</p>
+                      <p className="channel__name">{text}</p>
                       <div className="channel__follow">
-                        {item.number} theo dõi
+                        {number} theo dõi
                       </div>
                     </div>
                   </div>

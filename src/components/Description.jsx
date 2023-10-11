@@ -2,13 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ShowMoreText from "react-show-more-text";
 import Avatar from "../assets/img/Avatar.png";
+import { useToggle } from "@react-hookz/web";
 
-function Description({ item, followChannelHandler }) {
+function Description({ item}) {
   const data = [
     {
       name: "Châu Khải Phong Music",
     },
   ];
+  const [follow, setFollow] = useToggle(false);
+  const followChannelHandler = async () => {
+    setFollow()};
   return (
     <div>
       {data.map((item, index) => (
@@ -18,14 +22,14 @@ function Description({ item, followChannelHandler }) {
             <img className="card__user-avatar" src={Avatar} alt="" />
             {/* </Link> */}
             {/* <Link to={`/channel/${item.videoData.channelSlug}`}> */}
-            <div className="card__user-name">{item.name}</div>
+            <div className="card__user-name">Châu Khải Phong Music</div>
             {/* </Link> */}
 
             <button
-              className={item.isFollow ? "btn btn--gray" : "btn btn--white"}
+              className={follow ? "btn btn--gray" : "btn btn--white"}
               onClick={followChannelHandler}
             >
-              {item.isFollow ? "Đã theo dõi" : "Theo dõi"}
+              {follow ? "Đã theo dõi" : "Theo dõi"}
             </button>
           </div>
           <div className="card__bottom">

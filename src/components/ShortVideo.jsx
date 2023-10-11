@@ -15,9 +15,9 @@ import ArrowLight from "../assets/img/ArrowLight.svg";
 import { getUser } from "../utils/localStorage";
 import { CircularProgress } from "@mui/material";
 import Description from "./Description";
-import Butterfly from "../assets/video/Butterfly.mp4"
-import OnePiece from "../assets/video/OnePiece.mp4"
-import Zoro from "../assets/video/Zoro.mp4"
+import Butterfly from "../assets/video/Butterfly.mp4";
+import OnePiece from "../assets/video/OnePiece.mp4";
+import Zoro from "../assets/video/Zoro.mp4";
 
 function ShortVideo(pageId = "for_you") {
   const [showLoginRequiredDialog, setShowLoginRequiredDialog] = useState(false);
@@ -86,7 +86,6 @@ function ShortVideo(pageId = "for_you") {
     userActions: {
       doubleClick: false,
     },
-   
   };
   const followChannelHandler = async (id, currentStatus, channelId) => {
     const payload = {
@@ -184,25 +183,25 @@ function ShortVideo(pageId = "for_you") {
       sources: [
         {
           src: Butterfly,
-          type: "video/mp4"
-        }
-      ]
+          type: "video/mp4",
+        },
+      ],
     },
     {
       sources: [
         {
           src: OnePiece,
-          type: "video/mp4"
-        }
-      ]
+          type: "video/mp4",
+        },
+      ],
     },
     {
       sources: [
         {
           src: Zoro,
-          type: "video/mp4"
-        }
-      ]
+          type: "video/mp4",
+        },
+      ],
     },
   ];
   return (
@@ -233,12 +232,11 @@ function ShortVideo(pageId = "for_you") {
         noSwipingClass="player"
       >
         {allData.map((item, index) => (
-
           <SwiperSlide key={index}>
             <div className="card">
               <div className="card__video">
                 <div className="player">
-                  {swiperIndex === index ? (         
+                  {swiperIndex === index ? (
                     <VideoJS
                       options={{
                         ...videoJsOptions,
