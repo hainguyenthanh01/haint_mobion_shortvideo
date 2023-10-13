@@ -182,7 +182,7 @@ export default function ShareDialog({ open, setOpen}) {
           <button
             className="btn btn--blue"
             onClick={
-              () => handleCopy("http://arabicatech.vn")
+              () => handleCopy()
             }
           >
             Sao chép

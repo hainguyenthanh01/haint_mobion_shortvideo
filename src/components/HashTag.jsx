@@ -102,15 +102,37 @@ function HashTag() {
       view: "2K"
     },
     {
-      imgBG: "https://static2-images.vnncdn.net/files/publish/2022/9/27/300547377-1226894978044272-2329636357935330016-n-780.jpg",
+      imgBG:
+        "https://static2-images.vnncdn.net/files/publish/2022/9/27/302088233-1159194098341093-4658673666846962306-n-776.jpg",
       name: "Lê Bống",
-      imgAv:"https://ss-images.saostar.vn/w800/pc/1631721641909/saostar-w8sc5b97aapxhr5k.jpg",
-      userName: "Lê Bống tiktok",
-      view: "3,8K"
-
+      view: "3,8K",
     },
     {
-      imgBG: "https://yt3.googleusercontent.com/uu4Vt5F0XG4vS3A3PCNKW4-nC6vzocCCrfLAZWEIX8lKY-QwExGxTpfU-mCOeBC0Lp8BE-01=s900-c-k-c0x00ffffff-no-rj",
+      imgBG:
+        "https://media.tenor.com/clFnzvrjIM0AAAAC/zoro-slash-bub-made-it.gif",
+      name: "Châu Khải Phong",
+      view: "2K",
+    },
+    {
+      imgBG:
+        "https://i.vietgiaitri.com/2021/9/17/do-ban-le-bong-da-dao-keo-bo-phan-nao-tren-guong-mat-de-co-duoc-nhan-sac-hot-girl-nhu-hien-tai-f4a-6034809.jpg",
+      name: "Lê Bống",
+      view: "3,8K",
+    },
+    {
+      imgBG:
+        "https://media.tenor.com/ZvkygSP_96EAAAAd/roronoa-zoro-one-piece.gif",
+      name: "Châu Khải Phong",
+      view: "2K",
+    },
+    {
+      imgBG:
+        "https://giffiles.alphacoders.com/219/219506.gif",
+      name: "Lê Bống",
+      view: "3,8K",
+    },
+    {
+      imgBG: "https://giffiles.alphacoders.com/220/220881.gif",
       name: "Châu Khải Phong",
       imgAv:"https://giadinh.mediacdn.vn/2019/10/23/phong11-1571818005585708233526.jpg",
       userName: "Châu Khải Phong Music",
@@ -125,72 +147,34 @@ function HashTag() {
 
     },
     {
-      imgBG: "https://yt3.googleusercontent.com/uu4Vt5F0XG4vS3A3PCNKW4-nC6vzocCCrfLAZWEIX8lKY-QwExGxTpfU-mCOeBC0Lp8BE-01=s900-c-k-c0x00ffffff-no-rj",
-      name: "Châu Khải Phong",
-      imgAv:"https://giadinh.mediacdn.vn/2019/10/23/phong11-1571818005585708233526.jpg",
-      userName: "Châu Khải Phong Music",
-      view: "2K"
-    },
-    {
-      imgBG: "https://static2-images.vnncdn.net/files/publish/2022/9/27/300547377-1226894978044272-2329636357935330016-n-780.jpg",
+      imgBG:
+        "https://static2-images.vnncdn.net/files/publish/2022/9/27/302088233-1159194098341093-4658673666846962306-n-776.jpg",
       name: "Lê Bống",
-      imgAv:"https://ss-images.saostar.vn/w800/pc/1631721641909/saostar-w8sc5b97aapxhr5k.jpg",
-      userName: "Lê Bống tiktok",
-      view: "3,8K"
-
+      view: "3,8K",
     },
     {
-      imgBG: "https://yt3.googleusercontent.com/uu4Vt5F0XG4vS3A3PCNKW4-nC6vzocCCrfLAZWEIX8lKY-QwExGxTpfU-mCOeBC0Lp8BE-01=s900-c-k-c0x00ffffff-no-rj",
+      imgBG:
+        "https://media.tenor.com/clFnzvrjIM0AAAAC/zoro-slash-bub-made-it.gif",
       name: "Châu Khải Phong",
-      imgAv:"https://giadinh.mediacdn.vn/2019/10/23/phong11-1571818005585708233526.jpg",
-      userName: "Châu Khải Phong Music",
-      view: "2K"
+      view: "2K",
     },
     {
-      imgBG: "https://static2-images.vnncdn.net/files/publish/2022/9/27/300547377-1226894978044272-2329636357935330016-n-780.jpg",
+      imgBG:
+        "https://i.vietgiaitri.com/2021/9/17/do-ban-le-bong-da-dao-keo-bo-phan-nao-tren-guong-mat-de-co-duoc-nhan-sac-hot-girl-nhu-hien-tai-f4a-6034809.jpg",
       name: "Lê Bống",
-      imgAv:"https://ss-images.saostar.vn/w800/pc/1631721641909/saostar-w8sc5b97aapxhr5k.jpg",
-      userName: "Lê Bống tiktok",
-      view: "3,8K"
-
+      view: "3,8K",
     },
     {
-      imgBG: "https://yt3.googleusercontent.com/uu4Vt5F0XG4vS3A3PCNKW4-nC6vzocCCrfLAZWEIX8lKY-QwExGxTpfU-mCOeBC0Lp8BE-01=s900-c-k-c0x00ffffff-no-rj",
+      imgBG:
+        "https://media.tenor.com/ZvkygSP_96EAAAAd/roronoa-zoro-one-piece.gif",
       name: "Châu Khải Phong",
-      imgAv:"https://giadinh.mediacdn.vn/2019/10/23/phong11-1571818005585708233526.jpg",
-      userName: "Châu Khải Phong Music",
-      view: "2K"
+      view: "2K",
     },
     {
-      imgBG: "https://static2-images.vnncdn.net/files/publish/2022/9/27/300547377-1226894978044272-2329636357935330016-n-780.jpg",
+      imgBG:
+        "https://static2-images.vnncdn.net/files/publish/2022/9/27/300547377-1226894978044272-2329636357935330016-n-780.jpg",
       name: "Lê Bống",
-      imgAv:"https://ss-images.saostar.vn/w800/pc/1631721641909/saostar-w8sc5b97aapxhr5k.jpg",
-      userName: "Lê Bống tiktok",
-      view: "3,8K"
-
-    },
-    {
-      imgBG: "https://yt3.googleusercontent.com/uu4Vt5F0XG4vS3A3PCNKW4-nC6vzocCCrfLAZWEIX8lKY-QwExGxTpfU-mCOeBC0Lp8BE-01=s900-c-k-c0x00ffffff-no-rj",
-      name: "Châu Khải Phong",
-      imgAv:"https://giadinh.mediacdn.vn/2019/10/23/phong11-1571818005585708233526.jpg",
-      userName: "Châu Khải Phong Music",
-      view: "2K"
-    },
-
-    {
-      imgBG: "https://static2-images.vnncdn.net/files/publish/2022/9/27/300547377-1226894978044272-2329636357935330016-n-780.jpg",
-      name: "Lê Bống",
-      imgAv:"https://ss-images.saostar.vn/w800/pc/1631721641909/saostar-w8sc5b97aapxhr5k.jpg",
-      userName: "Lê Bống tiktok",
-      view: "3,8K"
-
-    },
-    {
-      imgBG: "https://yt3.googleusercontent.com/uu4Vt5F0XG4vS3A3PCNKW4-nC6vzocCCrfLAZWEIX8lKY-QwExGxTpfU-mCOeBC0Lp8BE-01=s900-c-k-c0x00ffffff-no-rj",
-      name: "Châu Khải Phong",
-      imgAv:"https://giadinh.mediacdn.vn/2019/10/23/phong11-1571818005585708233526.jpg",
-      userName: "Châu Khải Phong Music",
-      view: "2K"
+      view: "3,8K",
     },
   ]
   return (

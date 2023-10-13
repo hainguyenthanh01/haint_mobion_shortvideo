@@ -109,7 +109,7 @@ function Channel() {
     },
     {
       imgBG:
-        "https://yt3.googleusercontent.com/uu4Vt5F0XG4vS3A3PCNKW4-nC6vzocCCrfLAZWEIX8lKY-QwExGxTpfU-mCOeBC0Lp8BE-01=s900-c-k-c0x00ffffff-no-rj",
+        "https://i.pinimg.com/originals/aa/6b/8f/aa6b8ffa59a8d2cd830205ec11457706.gif",
       name: "Châu Khải Phong",
       imgAv:
         "https://giadinh.mediacdn.vn/2019/10/23/phong11-1571818005585708233526.jpg",
@@ -118,7 +118,7 @@ function Channel() {
     },
     {
       imgBG:
-        "https://static2-images.vnncdn.net/files/publish/2022/9/27/300547377-1226894978044272-2329636357935330016-n-780.jpg",
+        "https://gifdb.com/images/high/naruto-fire-rasengan-vq0j2diwfw4mv5kq.gif",
       name: "Lê Bống",
       imgAv:
         "https://ss-images.saostar.vn/w800/pc/1631721641909/saostar-w8sc5b97aapxhr5k.jpg",
@@ -127,7 +127,7 @@ function Channel() {
     },
     {
       imgBG:
-        "https://yt3.googleusercontent.com/uu4Vt5F0XG4vS3A3PCNKW4-nC6vzocCCrfLAZWEIX8lKY-QwExGxTpfU-mCOeBC0Lp8BE-01=s900-c-k-c0x00ffffff-no-rj",
+        "https://i.pinimg.com/originals/0e/0d/9f/0e0d9fc7a1e651ff13bd0499bb94d593.gif",
       name: "Châu Khải Phong",
       imgAv:
         "https://giadinh.mediacdn.vn/2019/10/23/phong11-1571818005585708233526.jpg",
@@ -136,13 +136,37 @@ function Channel() {
     },
     {
       imgBG:
-        "https://static2-images.vnncdn.net/files/publish/2022/9/27/300547377-1226894978044272-2329636357935330016-n-780.jpg",
+        "https://yt3.googleusercontent.com/VUoCb4XKNUy021qgpI2MY-JW-EkJBjKlg_mekGoNY0OlSXAtB73zt51UFIRDcl34mgKrENDlIQ=s900-c-k-c0x00ffffff-no-rj",
       name: "Lê Bống",
       view: "3,8K",
     },
     {
       imgBG:
-        "https://yt3.googleusercontent.com/uu4Vt5F0XG4vS3A3PCNKW4-nC6vzocCCrfLAZWEIX8lKY-QwExGxTpfU-mCOeBC0Lp8BE-01=s900-c-k-c0x00ffffff-no-rj",
+        "https://i.pinimg.com/originals/5b/de/11/5bde11ea1070b61017992608d6e6e2a6.gif",
+      name: "Châu Khải Phong",
+      view: "2K",
+    },
+    {
+      imgBG:
+        "https://static2-images.vnncdn.net/files/publish/2022/9/27/302088233-1159194098341093-4658673666846962306-n-776.jpg",
+      name: "Lê Bống",
+      view: "3,8K",
+    },
+    {
+      imgBG:
+        "https://media.tenor.com/clFnzvrjIM0AAAAC/zoro-slash-bub-made-it.gif",
+      name: "Châu Khải Phong",
+      view: "2K",
+    },
+    {
+      imgBG:
+        "https://i.vietgiaitri.com/2021/9/17/do-ban-le-bong-da-dao-keo-bo-phan-nao-tren-guong-mat-de-co-duoc-nhan-sac-hot-girl-nhu-hien-tai-f4a-6034809.jpg",
+      name: "Lê Bống",
+      view: "3,8K",
+    },
+    {
+      imgBG:
+        "https://media.tenor.com/ZvkygSP_96EAAAAd/roronoa-zoro-one-piece.gif",
       name: "Châu Khải Phong",
       view: "2K",
     },
@@ -151,49 +175,6 @@ function Channel() {
         "https://static2-images.vnncdn.net/files/publish/2022/9/27/300547377-1226894978044272-2329636357935330016-n-780.jpg",
       name: "Lê Bống",
       view: "3,8K",
-    },
-    {
-      imgBG:
-        "https://yt3.googleusercontent.com/uu4Vt5F0XG4vS3A3PCNKW4-nC6vzocCCrfLAZWEIX8lKY-QwExGxTpfU-mCOeBC0Lp8BE-01=s900-c-k-c0x00ffffff-no-rj",
-      name: "Châu Khải Phong",
-      view: "2K",
-    },
-    {
-      imgBG:
-        "https://static2-images.vnncdn.net/files/publish/2022/9/27/300547377-1226894978044272-2329636357935330016-n-780.jpg",
-      name: "Lê Bống",
-      view: "3,8K",
-    },
-    {
-      imgBG:
-        "https://yt3.googleusercontent.com/uu4Vt5F0XG4vS3A3PCNKW4-nC6vzocCCrfLAZWEIX8lKY-QwExGxTpfU-mCOeBC0Lp8BE-01=s900-c-k-c0x00ffffff-no-rj",
-      name: "Châu Khải Phong",
-      view: "2K",
-    },
-    {
-      imgBG:
-        "https://static2-images.vnncdn.net/files/publish/2022/9/27/300547377-1226894978044272-2329636357935330016-n-780.jpg",
-      name: "Lê Bống",
-      view: "3,8K",
-    },
-    {
-      imgBG:
-        "https://yt3.googleusercontent.com/uu4Vt5F0XG4vS3A3PCNKW4-nC6vzocCCrfLAZWEIX8lKY-QwExGxTpfU-mCOeBC0Lp8BE-01=s900-c-k-c0x00ffffff-no-rj",
-      name: "Châu Khải Phong",
-      view: "2K",
-    },
-
-    {
-      imgBG:
-        "https://static2-images.vnncdn.net/files/publish/2022/9/27/300547377-1226894978044272-2329636357935330016-n-780.jpg",
-      name: "Lê Bống",
-      view: "3,8K",
-    },
-    {
-      imgBG:
-        "https://yt3.googleusercontent.com/uu4Vt5F0XG4vS3A3PCNKW4-nC6vzocCCrfLAZWEIX8lKY-QwExGxTpfU-mCOeBC0Lp8BE-01=s900-c-k-c0x00ffffff-no-rj",
-      name: "Châu Khải Phong",
-      view: "2K",
     },
   ];
 
