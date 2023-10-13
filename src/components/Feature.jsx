@@ -8,11 +8,14 @@ import Comment from "../assets/img/Comment.svg";
 import WhiteSave from "../assets/img/WhiteSave.svg";
 import YellowSave from "../assets/img/YellowSave.svg";
 import Share from "../assets/img/Share.svg";
+import { setUser } from "../helper";
+import LoginRequiredDialog from "../Dialogs/LoginRequiredDialog";
+
 // import videoService from "../services/video";
-import { getUser } from "../utils/localStorage";
+// import { getUser } from "../utils/localStorage";
 // import LoginRequiredDialog from "../Dialogs/LoginRequiredDialog";
 
-function Feature({ featureData, allDataLove = [], setAllDataLove = () => {} }) {
+function Feature({ featureData, allDataLove = [], setAllDataLove = () => {}, userState,setUserState=()=>{} }) {
   const [liked, setLiked] = useToggle(false);
 
   // const [liked, setLiked] = useToggle(featureData?.isFavourite);
@@ -26,11 +29,11 @@ function Feature({ featureData, allDataLove = [], setAllDataLove = () => {} }) {
   const [showShare, setShowShare] = useState(false);
   const [showLoginRequiredDialog, setShowLoginRequiredDialog] = useState(false);
 
-  const user = getUser();
+  // const user = getUser();
 
   const likeHandler = async () => {
     setLiked()
-    // if (!user) {
+    // if (!userState) {
     //   setShowLoginRequiredDialog(true);
     //   return;
     // }
@@ -63,7 +66,7 @@ function Feature({ featureData, allDataLove = [], setAllDataLove = () => {} }) {
   };
   const saveHandler = async () => {
     setSaved()
-    // if (!user) {
+    // if (!userState) {
     //   setShowLoginRequiredDialog(true);
     //   return;
     // }
@@ -100,13 +103,13 @@ function Feature({ featureData, allDataLove = [], setAllDataLove = () => {} }) {
         <div className="feature__group">
           <button
             className="feature__btn"
-            onClick={() => {
-              if (!user) {
-                setShowLoginRequiredDialog(true);
-                return;
-              }
-              setShowComment(true);
-            }}
+            // onClick={() => {
+            //   if (!userState) {
+            //     setShowLoginRequiredDialog(true);
+            //     return;
+            //   }
+            //   setShowComment(true);
+            // }}
           >
             <img src={Comment} alt="" />
           </button>
@@ -142,11 +145,11 @@ function Feature({ featureData, allDataLove = [], setAllDataLove = () => {} }) {
         totalCommentCount={totalCommentCount}
         setTotalCommentCount={setTotalCommentCount}
       /> */}
-{/* 
+
       <LoginRequiredDialog
         open={showLoginRequiredDialog}
         setOpen={setShowLoginRequiredDialog}
-      /> */}
+      />
 
       <ShareDialog
         open={showShare}

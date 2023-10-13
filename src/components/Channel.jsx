@@ -10,6 +10,7 @@ import ImgBoxEmpty from "./ImgBoxEmpty";
 // import LoginRequiredDialog from "../Dialogs/LoginRequiredDialog";
 import LoadMore from "./LoadMore";
 import { useToggle } from "@react-hookz/web";
+import ShareDialog from "../Dialogs/ShareDialog";
 
 let isLastPage = false;
 
@@ -93,6 +94,8 @@ function Channel() {
   //   }
   // }, [scroll.y, scroll.lastY, isLastPage]);
   const [follow, setFollow] = useToggle(false);
+  const [openShare, setOpenShare] = useState(false);
+
   const followChannelHandler = async () => {
     setFollow()};
   const listChanel = [{}];
@@ -217,8 +220,7 @@ function Channel() {
             </button>
           </div>
           <div className="channel-page__info-groupBtn">
-            {/* <button onClick={() => setOpenShare(true)}> */}
-            <button>
+            <button onClick={() => setOpenShare(true)}>
               <img src={shareImg} alt="" height={24} width={24} />
             </button>
             {/* <button>
@@ -300,12 +302,14 @@ function Channel() {
           <LoadMore />
         </div>
       }
-      {/* <ShareDialog
+      <ShareDialog
         open={openShare}
         setOpen={setOpenShare}
-        link={window.location.href}
+        // link={window.location.href}
+        
       />
-      <LoginRequiredDialog
+
+       {/* <LoginRequiredDialog
         open={showLoginRequiredDialog}
         setOpen={setShowLoginRequiredDialog}
       /> */}

@@ -23,7 +23,7 @@ import ESport from "../assets/icons/options/Esport.svg";
 import Kids from "../assets/icons/options/Kids.svg";
 import TinNhanh from "../assets/icons/options/TinNhanh.png";
 import { setUser } from "../helper";
-import { getUser } from "../utils/localStorage";
+// import { getUser } from "../utils/localStorage";
 
 function Sidebar({showMenu,userState,setUserState=()=>{}}) {
   const location = useLocation();

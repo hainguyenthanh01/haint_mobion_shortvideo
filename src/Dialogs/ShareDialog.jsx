@@ -11,6 +11,9 @@ import ShareIcon_Telegram from "../assets/icons/shareIcon/Telegram.svg";
 import ShareIcon_Twitter from "../assets/icons/shareIcon/Twitter.svg";
 import ShareIcon_Email from "../assets/icons/shareIcon/Email.svg";
 import { linkConstants } from "../utils/constan";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import { useState } from "react";
+
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -20,6 +23,8 @@ export default function ShareDialog({ open, setOpen}) {
   const handleClose = () => {
     setOpen(false);
   };
+  const [copied, setCopied] = useState(false);
+  const otherCopy = () => setCopied(true);
 
   const menuShare = [
     // {
@@ -108,12 +113,9 @@ export default function ShareDialog({ open, setOpen}) {
     // var tempInput = document.createElement("input");
     // tempInput.value = text;
     // document.body.appendChild(tempInput);
-    // console.log(tempInput.value);
     // tempInput.select();
-    // console.log(document.body.appendChild(tempInput));
     // let copy = document.execCommand("Copy");
-    // // document.body.removeChild(tempInput);
-    // console.log(copy);
+    // document.body.removeChild(tempInput);
     // const el = document.getElementById(`input-link-${itemId}`);
     // const selected =
     //   document.getSelection().rangeCount > 0
@@ -179,6 +181,7 @@ export default function ShareDialog({ open, setOpen}) {
             readOnly
             // disabled
           />
+          <CopyToClipboard onCopy={otherCopy} text={"http://arabicatech.vn"}>
           <button
             className="btn btn--blue"
             onClick={
@@ -187,6 +190,7 @@ export default function ShareDialog({ open, setOpen}) {
           >
             Sao chép
           </button>
+          </CopyToClipboard>
         </div>
       </div>
     </Dialog>

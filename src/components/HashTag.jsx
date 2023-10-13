@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import ImageDefaultHastag from "./ImageDefaultHastag";
 import ImgBoxEmpty from "./ImgBoxEmpty";
 import Share from "../assets/img/Share.svg";
-// import ShareDialog from "../Dialogs/ShareDialog";
+import ShareDialog from "../Dialogs/ShareDialog";
 // import Loading from "../Dialogs/Loading";
 import LoadMore from "./LoadMore";
 
@@ -19,7 +19,7 @@ function HashTag() {
   // const [enbleFetch, setEnblefetch] = useState(true);
   // const [hastag, setHastag] = useState(hashtagId);
   // const [checkHastagChange, setCheckHastagChange] = useState(0);
-  // const [openShare, setOpenShare] = useState(false);
+  const [openShare, setOpenShare] = useState(false);
   // const { listHastag, isFetching, isLoading, refetchHastag } = useHastag({
   //   querry: {
   //     id: `hashtag_detail_${hastag}`,
@@ -187,10 +187,9 @@ function HashTag() {
             <p>1,5K lượt xem</p>
           </div>
           <div className="channel-page__info-groupBtn">
-            <button>
-            {/* <button onClick={() => setOpenShare(true)}> */}
+            <button onClick={() => setOpenShare(true)}>
               <img src={Share} alt="" width={24} height={24} />
-            </button>
+              </button>
             {/* <button>
               <img src="/ThreeDot.svg" alt="" />
             </button> */}
@@ -258,11 +257,11 @@ function HashTag() {
       ) : (
         <ImgBoxEmpty text={`Nội dung đang được cập nhật`} />
       )}
-      {/* <ShareDialog
+      <ShareDialog
         open={openShare}
         setOpen={setOpenShare}
         link={window.location.href}
-      /> */}
+      />
     </div>
   );
 }
