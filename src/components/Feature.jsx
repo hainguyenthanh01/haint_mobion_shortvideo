@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import useToggle from "../hooks/useToggle";
 // import CommentDialog from "../Dialogs/CommentDialog";
-// import ShareDialog from "../Dialogs/ShareDialog";
+import ShareDialog from "../Dialogs/ShareDialog";
 import RedHeart from "../assets/img/RedHeart.svg";
 import Love from "../assets/img/Love.svg";
 import Comment from "../assets/img/Comment.svg";
@@ -148,12 +148,12 @@ function Feature({ featureData, allDataLove = [], setAllDataLove = () => {} }) {
         setOpen={setShowLoginRequiredDialog}
       /> */}
 
-      {/* <ShareDialog
+      <ShareDialog
         open={showShare}
         setOpen={setShowShare}
-        link={featureData.link}
-        itemId={featureData?.id}
-      /> */}
+        // link={featureData.link}
+        // itemId={featureData?.id}
+      />
     </>
   );
 }

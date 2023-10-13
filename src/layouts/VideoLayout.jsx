@@ -5,7 +5,8 @@ import Sidebar from "../components/Sidebar";
 import useToggle from "../hooks/useToggle";
 import { useEffect, useState } from "react";
 import ShortVideo from "../components/ShortVideo";
-import { getUser } from "../utils/localStorage";
+import { getUser } from "../helper";
+// import { getUser } from "../utils/localStorage";
 
 const VideoLayout = () => {
   const [showMenu, setShowMenu] = useToggle(true);

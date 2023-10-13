@@ -9,7 +9,7 @@ import ImgBoxEmpty from "./ImgBoxEmpty";
 // import { usePackage } from "../hooks/usePackage";
 import iconStar from "../assets/img/iconStar.png";
 
-function Profile() {
+function Profile(userState, setUserState = () => {}) {
   const [tabRecent, setTabRecent] = useState(true);
   const navigate = useNavigate();
   // const [hasPremium, setHasPremium] = useToggle(false);
@@ -38,16 +38,25 @@ function Profile() {
   // } = useUser(true);
   const myPackage = [
     {
-      name: "Chưa có gói",
+      name: "Đã có gói",
     },
   ];
 
   const followChannel = [
     {
-      avatarImage:
-        "https://ss-images.saostar.vn/w800/pc/1631721641909/saostar-w8sc5b97aapxhr5k.jpg",
-      channel_name: "Lê Bống",
+      avatarImage: "https://i.imgur.com/Zn9SMwC.gif",
+      channel_name: "zenitsu",
       num_follow: "3,8K",
+    },
+    {
+      avatarImage: "https://giffiles.alphacoders.com/354/35458.gif",
+      channel_name: "Monkey D. Luffy",
+      num_follow: "2,1K",
+    },
+    {
+      avatarImage: "https://media.tenor.com/EyOIF5HdeawAAAAd/zoro.gif",
+      channel_name: "Roronoa Zoro",
+      num_follow: "2,1K",
     },
   ];
   const recentVideo = [
@@ -185,7 +194,7 @@ function Profile() {
         <div className="channel-page__info-head">
           <div className="channel-page__info-avatar">
             <img
-              src="https://c4.wallpaperflare.com/wallpaper/754/541/105/one-piece-monkey-d-luffy-hd-wallpaper-preview.jpg"
+              src="https://i.pinimg.com/originals/cc/75/1c/cc751c52d8545a7cbcbeba7e7b049b5c.gif"
               alt=""
             />
           </div>

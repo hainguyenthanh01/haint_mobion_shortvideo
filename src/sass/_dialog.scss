@@ -1,0 +1,35 @@
+.login-required {
+  padding: 44px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+
+  &__title {
+    // @include replace-font(700, 24px);
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  &__des {
+    opacity: 0.6;
+    text-align: center;
+  }
+  &__btn {
+    display: flex;
+    // align-items: ;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  button {
+    min-height: 40px;
+    width: 230px;
+    padding: 10px 20px;
+    // @include replace-font(700, 16px, 21px);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 21px;
+    border-radius: 10px;
+  }
+}

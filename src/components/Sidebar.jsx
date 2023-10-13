@@ -159,9 +159,9 @@ const [showFollowVideo, setShowFollowVideo] = useState(false);
               className={`${showMenu ? "menu__item menu__show" : "menu__item"} ${
                 location.pathname === "/" && url === "/danh-cho-ban" && "active"
               }`}
-              // style={{
-              //   display: url === "/yeu-thich" ? "none" : "flex",
-              // }}
+              style={{
+                display: !userState && url === "/yeu-thich" ? "none" : "flex",
+              }}
               onClick={()=>{
                 navigate(link)}}
             >          

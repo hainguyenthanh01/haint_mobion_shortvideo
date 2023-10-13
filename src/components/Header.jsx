@@ -31,11 +31,15 @@ import { setUser,getUser } from "../helper";
 // import { usePackage } from "../hooks/usePackage";
 // import { setReqPage } from "../utils/auth";
 import avtDefault from "../assets/img/Avatar.png"
+import LogoutRequiredDialog from "../Dialogs/LogoutRequiredDialog";
 
 function Header({ setShowMenu = () => {}, showMenu , userState, setUserState = ()=>{} }) {
   const [showPackage, setShowPackage] = useToggle(false);
   const [showSearchBox, setShowSearchBox] = useToggle(false);
   const [showNotification, setShowNotification] = useState(null)
+  const [showProfile, setShowProfile] = useToggle(false);
+  const [showLogout, setShowLogout] = useState(false);
+
   
 
   // const location = useLocation();
@@ -64,6 +68,28 @@ function Header({ setShowMenu = () => {}, showMenu , userState, setUserState = (
   useClickOutside(searchRef, () => {
     setShowSearchBox();
   });
+  const menuProfile = [
+    {
+      text: "Xem hồ sơ",
+      icon: PFprofile,
+      url: "/profile",
+    },
+    {
+      text: "Gói cước",
+      icon: PFpackage,
+      url: "/my-package",
+    },
+    {
+      text: "Đổi mật khẩu",
+      icon: PFpassword,
+      url: "/none",
+    },
+    {
+      text: "Đăng xuất",
+      icon: PFlogout,
+      url: "/logout",
+    },
+  ];
 
   return (
     <header className="header">
@@ -129,7 +155,8 @@ function Header({ setShowMenu = () => {}, showMenu , userState, setUserState = (
         >
           Mua gói
         </button>
-        <Button
+        {userState && (
+         <Button
             id="basic-button"
             aria-controls={showNotification ? "basic-menu" : undefined}
             aria-haspopup="true"
@@ -138,7 +165,7 @@ function Header({ setShowMenu = () => {}, showMenu , userState, setUserState = (
             sx={{ minWidth: "auto", padding: 0 }}
           >
             <img src={bell} alt="bell" className="header__bellIcon" />
-          </Button>
+          </Button>)}
           <Menu
           id="basic-menu"
           anchorEl={showNotification}
@@ -159,6 +186,82 @@ function Header({ setShowMenu = () => {}, showMenu , userState, setUserState = (
             </div>
           </MenuItem>
         </Menu>
+
+        {userState && (
+          <img
+            onClick={setShowProfile}
+            src="https://i.pinimg.com/originals/cc/75/1c/cc751c52d8545a7cbcbeba7e7b049b5c.gif"
+            alt="Avatar-user"
+            className="profile-menu__avatar"
+          />
+        )}
+        {/* {userState && (
+          <div onClick={()=>{navigate("/profile")}}><img src={avtDefault} alt="avt" /></div>
+        )} */}
+        {showProfile && userState && (
+          <div className="profile-menu">
+            <div className="profile-menu__header">
+              <img
+                // src={user?.avatarImage}
+                src="https://i.pinimg.com/originals/cc/75/1c/cc751c52d8545a7cbcbeba7e7b049b5c.gif"
+                alt="Avatar-user"
+                className="profile-menu__avatar"
+              />
+              <div className="profile-menu__username">
+                Hi, Luffy
+                {/* {user?.fullname || user?.msisdn} */}
+              </div>
+            </div>
+            <div className="profile-menu__list">
+            {menuProfile.map((item) =>
+                item.url === "/none" ? (
+                  <div
+                    key={item.text}
+                    className="profile-menu__item"
+                    // onClick={() => {
+                    //   navigate("u/change-password");
+                    // }}
+                  >
+                    <img
+                      src={item.icon}
+                      alt=""
+                      className="profile-menu__icon"
+                    />
+                    <p className="profile-menu__text">{item.text}</p>
+                  </div>
+                ) : item.url === "/logout" ? (
+                  <div
+                    key={item.text}
+                    className="profile-menu__item"
+                    onClick={() => {
+                      setShowLogout(true);
+                    }}
+                  >
+                    <img
+                      src={item.icon}
+                      alt=""
+                      className="profile-menu__icon"
+                    />
+                    <p className="profile-menu__text">{item.text}</p>
+                  </div>
+                ) : (
+                  item.url !== "/none" && (
+                    <Link to={item.url} key={item.text}>
+                      <div key={item.text} className="profile-menu__item">
+                        <img
+                          src={item.icon}
+                          alt=""
+                          className="profile-menu__icon"
+                        />
+                        <p className="profile-menu__text">{item.text}</p>
+                      </div>
+                    </Link>
+                  )
+                )
+              )}
+            </div>
+          </div>
+        )}
         {!userState && <button
           // onClick={() => navigate("/login")}
           className="header__login btn btn--blue"
@@ -170,20 +273,20 @@ function Header({ setShowMenu = () => {}, showMenu , userState, setUserState = (
           }}
           onClick={()=>{
             setUserState(true)
-            setUser(true)
-            
-        
+            setUser(true)     
         }}
         >
           Đăng Nhập
         </button>}
-        {userState && (
-          <div onClick={()=>{navigate("/profile")}}><img src={avtDefault} alt="avt" /></div>
-        )
 
-        }
       </div>
       <PackageDialog open={showPackage} setOpen={setShowPackage} />
+      <LogoutRequiredDialog
+        open={showLogout}
+        setShowLogout={setShowLogout}
+        setUserState={setUserState}
+        setShowProfile={setShowProfile}
+      />
     </header>
   );
 }
