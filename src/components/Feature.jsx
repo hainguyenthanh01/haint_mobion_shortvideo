@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import useToggle from "../hooks/useToggle";
-// import CommentDialog from "../Dialogs/CommentDialog";
+import CommentDialog from "../Dialogs/CommentDialog";
 import ShareDialog from "../Dialogs/ShareDialog";
 import RedHeart from "../assets/img/RedHeart.svg";
 import Love from "../assets/img/Love.svg";
@@ -103,13 +103,13 @@ function Feature({ featureData, allDataLove = [], setAllDataLove = () => {}, use
         <div className="feature__group">
           <button
             className="feature__btn"
-            // onClick={() => {
-            //   if (!userState) {
-            //     setShowLoginRequiredDialog(true);
-            //     return;
-            //   }
-            //   setShowComment(true);
-            // }}
+            onClick={() => {
+              // if (!userState) {
+              //   setShowLoginRequiredDialog(true);
+              //   return;
+              // }
+              setShowComment(true);
+            }}
           >
             <img src={Comment} alt="" />
           </button>
@@ -138,13 +138,13 @@ function Feature({ featureData, allDataLove = [], setAllDataLove = () => {}, use
           <p className="feature__number">Chia sẻ</p>
         </div>
       </div>
-      {/* <CommentDialog
+      <CommentDialog
         open={showComment}
         setOpen={setShowComment}
-        content_id={featureData.id}
-        totalCommentCount={totalCommentCount}
-        setTotalCommentCount={setTotalCommentCount}
-      /> */}
+        // content_id={featureData.id}
+        // totalCommentCount={totalCommentCount}
+        // setTotalCommentCount={setTotalCommentCount}
+      />
 
       <LoginRequiredDialog
         open={showLoginRequiredDialog}

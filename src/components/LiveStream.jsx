@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-// import LiveChat from "./LiveChat";
-// import CommentDialog from "../Dialogs/CommentDialog";
-// import ShareDialog from "../Dialogs/ShareDialog";
+import LiveChat from "./LiveChat";
+import CommentDialog from "../Dialogs/CommentDialog";
+import ShareDialog from "../Dialogs/ShareDialog";
 import useToggle from "../hooks/useToggle";
 import VideoJS from "./VideoJS";
 
@@ -256,9 +256,9 @@ function LiveStream({ pageId = "live" }) {
                   </div>
                 )}
               </div>
-              {/* {showLiveChat && swiperIndex === index && (
+              {showLiveChat && swiperIndex === index && (
                 <LiveChat setShowLiveChat={setShowLiveChat} />
-              )} */}
+              )}
 
               <div className="feature">
                 <div className="feature__group">
@@ -363,8 +363,8 @@ function LiveStream({ pageId = "live" }) {
           }}
         />
       </div>
-      {/* <CommentDialog open={showComment} handleClose={handleCloseComment} />
-      <ShareDialog open={showShare} setOpen={setShowShare} /> */}
+      <CommentDialog open={showComment} handleClose={handleCloseComment} />
+      <ShareDialog open={showShare} setOpen={setShowShare} />
     </div>
   );
 }

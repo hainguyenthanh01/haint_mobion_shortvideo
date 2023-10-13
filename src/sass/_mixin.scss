@@ -1,0 +1,45 @@
+@mixin scrollbar($foreground-color, $background-color, $border: 4px, $borderColor: $gray_bg) {
+  // For Google Chrome
+  &::-webkit-scrollbar {
+    display: block;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+    border-radius: 24px;
+    border: $border solid $borderColor;
+    &:hover {
+      background: $foreground-color;
+      border: $border solid $background-color;
+    }
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 8px;
+    &:hover {
+      background: $background-color;
+    }
+  }
+
+  // &::-webkit-scrollbar-track-piece:end {
+  //   margin-bottom: 50px;
+  // }
+
+  // &::-webkit-scrollbar-track-piece:start {
+  //   background: transparent;
+  //   margin-top: 50px;
+  // }
+
+  // For Internet Explorer
+  & {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
+@mixin replace-font($fontWeigh, $fontSize, $lineHeight: 24px) {
+  font-weight: $fontWeigh;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+}
