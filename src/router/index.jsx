@@ -23,6 +23,7 @@ import FollowVideo from "../components/FollowVideo";
 import HashTag from "../components/HashTag";
 import LiveStream from "../components/LiveStream";
 import LoveVideo from "../components/LoveVideo";
+import Profile from "../components/Profile";
 // import LoveVideo from "../components/LoveVideo";
 import ShortVideo from "../components/ShortVideo";
 import VideoLayout from "../layouts/VideoLayout";
@@ -120,6 +121,10 @@ const videoRoute = {
   {
     path: "live",
     element: <LiveStream/>
+  },
+  {
+    path: "profile",
+    element: <Profile/>
   }
     
 

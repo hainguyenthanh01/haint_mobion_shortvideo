@@ -26,15 +26,20 @@ import Notification from "./Notification";
 import PackageDialog from "../Dialogs/PackageDialog";
 // import LogoutRequiredDialog from "../Dialogs/LogoutRequiredDialog";
 import { Button, Menu, MenuItem } from "@mui/material";
+// import { getUser } from "../utils/localStorage";
+import { setUser,getUser } from "../helper";
 // import { usePackage } from "../hooks/usePackage";
 // import { setReqPage } from "../utils/auth";
+import avtDefault from "../assets/img/Avatar.png"
 
-function Header({ setShowMenu = () => {}, showMenu }) {
+function Header({ setShowMenu = () => {}, showMenu , userState, setUserState = ()=>{} }) {
   const [showPackage, setShowPackage] = useToggle(false);
   const [showSearchBox, setShowSearchBox] = useToggle(false);
-  const [showNotification, setShowNotification] = useState(null);
+  const [showNotification, setShowNotification] = useState(null)
+  
+
   // const location = useLocation();
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   // const notificationRef = useRef(null);
   // const profileRef = useRef(null);
   const searchRef = useRef(null);
@@ -154,7 +159,7 @@ function Header({ setShowMenu = () => {}, showMenu }) {
             </div>
           </MenuItem>
         </Menu>
-        <button
+        {!userState && <button
           // onClick={() => navigate("/login")}
           className="header__login btn btn--blue"
           style={{
@@ -163,9 +168,20 @@ function Header({ setShowMenu = () => {}, showMenu }) {
             border: "1px solid hsla(0,0%,100%,.1)",
             opacity: ".9",
           }}
+          onClick={()=>{
+            setUserState(true)
+            setUser(true)
+            
+        
+        }}
         >
           Đăng Nhập
-        </button>
+        </button>}
+        {userState && (
+          <div onClick={()=>{navigate("/profile")}}><img src={avtDefault} alt="avt" /></div>
+        )
+
+        }
       </div>
       <PackageDialog open={showPackage} setOpen={setShowPackage} />
     </header>

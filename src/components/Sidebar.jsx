@@ -22,8 +22,10 @@ import Nhac from "../assets/icons/options/Nhac.svg";
 import ESport from "../assets/icons/options/Esport.svg";
 import Kids from "../assets/icons/options/Kids.svg";
 import TinNhanh from "../assets/icons/options/TinNhanh.png";
+import { setUser } from "../helper";
+import { getUser } from "../utils/localStorage";
 
-function Sidebar({showMenu}) {
+function Sidebar({showMenu,userState,setUserState=()=>{}}) {
   const location = useLocation();
 const [showFollowVideo, setShowFollowVideo] = useState(false);
   const [listAllSidebar, setListAllSidebar] = useState({});
@@ -186,13 +188,15 @@ const [showFollowVideo, setShowFollowVideo] = useState(false);
           ))}
           <div className="sidebar__line"></div>
         </div>
-        {showMenu &&(
+        {!userState &&(
         <div className="login">
           <p className="login__des">
             Hãy đăng nhập để thích video, bình luận và đăng ký kênh.
           </p>
 
-          <button className="login__button" >
+          <button onClick={()=>{ 
+            setUserState(true)
+            setUser(true)}} className="login__button" >
             Đăng nhập
           </button>
           <div className="sidebar__line"></div>
