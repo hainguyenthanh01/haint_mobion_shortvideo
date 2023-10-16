@@ -264,7 +264,6 @@ function FollowVideo() {
             setOpen={setShowLoginRequiredDialog}
           /> */}
       </div>
-      {/* </ShortVideo> */}
     </>
   );
 }

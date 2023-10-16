@@ -103,7 +103,7 @@ function Header({ setShowMenu = () => {}, showMenu , userState, setUserState = (
             localStorage.setItem("open__menu", showMenu ? "0" : "1");
           }}
         />
-        {/* <Link> */}
+        <Link to={"/"}>
         <img
           className="header__logo"
           src={logo}
@@ -111,7 +111,7 @@ function Header({ setShowMenu = () => {}, showMenu , userState, setUserState = (
           width={154}
           height={56}
         />
-        {/* </Link> */}
+        </Link>
       </div>
       <div className="searchBox">
         <input
